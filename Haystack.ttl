@@ -1,0 +1,3191 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xml: <http://www.w3.org/XML/1998/namespace>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix ifc: <http://multimedialab.elis.ugent.be/organon/ontologies/IFC2X3#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix gbXML: <http://www.gbxml.org/schema#> .
+@prefix haystack: <http://project-haystack.org/tag/> .
+@prefix phy: <http://www.ibm.com/SCTC/ontology/PhysicalProcess#> .
+@prefix sb: <http://www.ibm.com/SCTC/ontology/SmartBuilding#> .
+@prefix : <http://www.ibm.com/SCTC/ontology/HayStack#> .
+@base <http://www.ibm.com/SCTC/ontology/HayStack>.
+
+<http://www.ibm.com/SCTC/ontology/HayStack> rdf:type owl:Ontology;
+    rdfs:comment "Ontology representation of Project Haystack"@en ;
+    dc:publisher "IBM Research, Smarter Cities Technology Centre, Dublin" ;
+    dc:created "2014-12-29T10:35:01.760000"^^xsd:dateTime .
+
+:usedWith a owl:AnnotationProperty. 
+:in       a owl:AnnotationProperty. 
+:hasMarker a owl:AsymmetricProperty, owl:IrreflexiveProperty, owl:ObjectProperty, owl:FunctionalProperty ; rdfs:range :HaystackMarker ; rdfs:domain :HaystackMarkerSet . 
+:HaystackMarker     rdf:type          owl:Class . 
+:HaystackMarkerSet  rdf:type          owl:Class . 
+:HaystackCoord      rdfs:subClassOf   geo:Point . 
+:HaystackRef        rdf:type   owl:AsymmetricProperty, owl:IrreflexiveProperty, owl:ObjectProperty, owl:FunctionalProperty . 
+:HaystackStr        rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:string . 
+:HaystackObj        rdf:type   owl:DatatypeProperty, owl:FunctionalProperty . 
+:HaystackNumber     rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:double . 
+:HaystackBool       rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:boolean . 
+:HaystackBin        rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:hexBinary . 
+:HaystackUri        rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:anyURI . 
+:HaystackDate       rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:date . 
+:HaystackTime       rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:time . 
+:HaystackDateTime   rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:dateTime . 
+
+:absorption  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Absorption"@en;
+    rdfs:label    "Absorption"@fr;
+    rdfs:label    "吸收式冷水机组"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/absorption>;
+    :usedWith     :equip;
+    :usedWith     :chiller;
+    rdfs:comment  "Indicates a chiller which uses absorption driven by hot water (as opposed to vapor compression)."@en.
+
+:ahu  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "AHU"@en;
+    rdfs:label    "Unité Traitement Air"@fr;
+    rdfs:label    "空调机组"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/ahu>;
+    :usedWith     :equip;
+    :usedWith     :rooftop;
+    rdfs:comment  "Air Handler Unit which heats and/or cools air."@en.
+
+:ahuRef  rdf:type   owl:AsymmetricProperty, owl:IrreflexiveProperty, owl:ObjectProperty, owl:FunctionalProperty ;
+        rdfs:subPropertyOf   :HaystackRef ;
+    rdfs:label    "AHU Ref"@en;
+    rdfs:label    "Unité Traitement Air RéF"@fr;
+    rdfs:label    "空调机组相关设备"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/ahuRef>;
+    rdfs:comment  "Associate an entity such as a vav with an ahu."@en.
+
+:air  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Air"@en;
+    rdfs:label    "Air"@fr;
+    rdfs:label    "空气"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/air>;
+    :usedWith     :point;
+    rdfs:comment  "Point associated with the measurement or control of air. In regards to wetBulb points with the air tag are associated with dry bulb."@en.
+
+:airCooled  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Air Cooled"@en;
+    rdfs:label    "Air Refroidi"@fr;
+    rdfs:label    "风冷"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/airCooled>;
+    :usedWith     :equip;
+    :usedWith     :chiller;
+    rdfs:comment  "Indicates chiller which uses air to cool the hot refrigerant."@en.
+
+:area  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:double ;
+        rdfs:subPropertyOf   :HaystackNumber ;
+    rdfs:label    "Area"@en;
+    rdfs:label    "Surface"@fr;
+    rdfs:label    "面积"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/area>;
+    :usedWith     :site;
+    rdfs:comment  "Floor area of a site measured in ft² or m²."@en.
+
+:blowdown  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Blowdown"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/blowdown>;
+    :usedWith     :water;
+    rdfs:comment  "Paired with water to indicate control or measurement of the blowdown water expelled from a coolingTower or boiler to remove mineral build up."@en.
+
+:boiler  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Boiler"@en;
+    rdfs:label    "Bouilloire"@fr;
+    rdfs:label    "锅炉"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/boiler>;
+    :usedWith     :equip;
+    rdfs:comment  "Boiler equip used to generate hot water or steam for heating."@en.
+
+:boilerPlant  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Boiler Plant"@en;
+    rdfs:label    "Chaufferie"@fr;
+    rdfs:label    "锅炉群"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/boilerPlant>;
+    rdfs:comment  "Group of one or more boilers."@en.
+
+:boilerPlantRef  rdf:type   owl:AsymmetricProperty, owl:IrreflexiveProperty, owl:ObjectProperty, owl:FunctionalProperty ;
+        rdfs:subPropertyOf   :HaystackRef ;
+    rdfs:label    "Boiler Plant Ref"@en;
+    rdfs:label    "Chaufferie RéF"@fr;
+    rdfs:label    "锅炉群相关设备"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/boilerPlantRef>;
+    rdfs:comment  "Associate an entity such as an ahu or boiler with its boilerPlant."@en.
+
+:bypass  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Bypass"@en;
+    rdfs:label    "Contournement"@fr;
+    rdfs:label    "旁通"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/bypass>;
+    :usedWith     :point;
+    :usedWith     :valve;
+    rdfs:comment  "If used with valve indicates a by-pass in a piping system."@en.
+
+:centrifugal  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Centrifugal"@en;
+    rdfs:label    "Centrifuge"@fr;
+    rdfs:label    "离心式冷水机组"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/centrifugal>;
+    rdfs:seeAlso  :reciprocal;
+    rdfs:seeAlso  :screw;
+    :usedWith     :equip;
+    :usedWith     :chiller;
+    rdfs:comment  "Indicates chiller compressor which uses a continuous flow of fluid through an impeller."@en.
+
+:chilled  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Chilled"@en;
+    rdfs:label    "Refroidi"@fr;
+    rdfs:label    "冷冻的"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/chilled>;
+    :usedWith     :point;
+    :usedWith     :water;
+    rdfs:comment  "Marker tag used with water for the chilled water system between chiller and ahu."@en.
+
+:chilledBeamZone  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Chilled Beam Zone"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/chilledBeamZone>;
+    :usedWith     :ahu;
+    rdfs:comment  "Marker for an ahu which delivers air to zones via chilled beam terminal units. These are terminal units with a cooling and/or heating coil but no damper nor fan."@en.
+
+:chiller  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Chiller"@en;
+    rdfs:label    "Refroidisseur"@fr;
+    rdfs:label    "冷机"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/chiller>;
+    :usedWith     :equip;
+    rdfs:comment  "Chillers remove heat from a liquid via a vapor compression or an absorption refrigeration cycle."@en.
+
+:chillerPlant  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Chiller Plant"@en;
+    rdfs:label    "Parc Refroidisseurs"@fr;
+    rdfs:label    "冷冻站"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/chillerPlant>;
+    :usedWith     :equip;
+    rdfs:comment  "Chiller plants model the entire system of equipment used to generate chilled water."@en.
+
+:chillerPlantRef  rdf:type   owl:AsymmetricProperty, owl:IrreflexiveProperty, owl:ObjectProperty, owl:FunctionalProperty ;
+        rdfs:subPropertyOf   :HaystackRef ;
+    rdfs:label    "Chiller Plant Ref"@en;
+    rdfs:label    "Parc Refroidisseurs RéF"@fr;
+    rdfs:label    "冷冻站相关设备"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/chillerPlantRef>;
+    rdfs:comment  "Associate a record such as an ahu with its chillerPlant."@en.
+
+:circuit  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Circuit"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/circuit>;
+    rdfs:seeAlso  :elecPanel;
+    rdfs:seeAlso  :meter;
+    :usedWith     :equip;
+    rdfs:comment  "An equip which models an electric circuit housed in an elecPanel. A circuit contains the points associated with sensors fuses or breakers."@en.
+
+:closedLoop  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Closed Loop"@en;
+    rdfs:label    "Boucle FerméE"@fr;
+    rdfs:label    "闭环"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/closedLoop>;
+    rdfs:seeAlso  :openLoop;
+    :usedWith     :equip;
+    :usedWith     :coolingTower;
+    rdfs:comment  "Indicates coolingTower which keeps the working fluid separate from the fluid used for heat transfer into the atmosphere."@en.
+
+:cmd  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Command"@en;
+    rdfs:label    "Command (Commande)"@fr;
+    rdfs:label    "输出"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/cmd>;
+    :usedWith     :point;
+    rdfs:comment  "Classifies a point as an output AO/BO command or actuator."@en.
+
+:co2  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "CO2"@en;
+    rdfs:label    "C O2"@fr;
+    rdfs:label    "C O₂  //二氧化碳"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/co2>;
+    :usedWith     :point;
+    :usedWith     :unit;
+    rdfs:comment  "Carbon dioxide level point measured in 'ppm'."@en.
+
+:coldDeck  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Cold Deck"@en;
+    rdfs:label    "Gaine Froide"@fr;
+    rdfs:label    "冷空气管道"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/coldDeck>;
+    :usedWith     :point;
+    rdfs:comment  "Associated with the cold air ductwork in a dualDuct or tripleDuct AHU."@en.
+
+:condensate  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Condensate"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/condensate>;
+    :usedWith     :water;
+    rdfs:comment  "Paired with water to indicate control or measurement of the condensate water in a coolingTower or boiler."@en.
+
+:condenser  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Condenser"@en;
+    rdfs:label    "Condenseur"@fr;
+    rdfs:label    "冷凝器"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/condenser>;
+    rdfs:seeAlso  :chiller;
+    rdfs:seeAlso  :coolingTower;
+    rdfs:seeAlso  :evaporator;
+    :usedWith     :point;
+    :usedWith     :water;
+    :usedWith     :refrig;
+    rdfs:comment  "When combined with the water tag this indicates points in a condenser water system between a chiller and coolingTower."@en.
+
+:connection  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Connection"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/connection>;
+    rdfs:seeAlso  :network;
+    rdfs:seeAlso  :device;
+    rdfs:comment  "Marker tag for a logical network connection between two devices using a specific communications protocol."@en.
+
+:constantVolume  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Constant Volume"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/constantVolume>;
+    rdfs:seeAlso  :variableVolume;
+    :usedWith     :ahu;
+    rdfs:comment  "Marks an ahu as delivering a constant volume of air flow. Typically this means that AHU runs with a single speed fan."@en.
+
+:cool  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Cool"@en;
+    rdfs:label    "Refroid"@fr;
+    rdfs:label    "冷却"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/cool>;
+    rdfs:seeAlso  :heat;
+    rdfs:seeAlso  :cooling;
+    :usedWith     :point;
+    rdfs:comment  "Cooling coil as bool or numeric point used with ahu equip. If multiple stages are used then also specify the stage tag. If the cooling coil is controlled by a valve then this point is mesaured from 0% to 100% otherwise it should be a boolean point."@en.
+
+:cooling  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Cooling"@en;
+    rdfs:label    "Refroidissement"@fr;
+    rdfs:label    "制冷"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/cooling>;
+    rdfs:seeAlso  :heating;
+    rdfs:seeAlso  :effective;
+    rdfs:seeAlso  :cool;
+    :usedWith     :point;
+    rdfs:comment  "Associated with the cooling mode of an HVAC system."@en.
+
+:coolingCapacity  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:double ;
+        rdfs:subPropertyOf   :HaystackNumber ;
+    rdfs:label    "Cooling Capacity"@en;
+    rdfs:label    "Capacité Refroidissement"@fr;
+    rdfs:label    "制冷量"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/coolingCapacity>;
+    :usedWith     :equip;
+    :usedWith     :chiller;
+    rdfs:comment  "Measurement of a chiller ability to remove heat measured in 'tonref' 'BTU/h' or 'kW'."@en.
+
+:coolingTower  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Cooling Tower"@en;
+    rdfs:label    "Tour Eau"@fr;
+    rdfs:label    "冷却塔"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/coolingTower>;
+    :usedWith     :equip;
+    rdfs:comment  "Cooling towers are used to transfer process waste heat to the atmosphere."@en.
+
+:cur  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Cur"@en;
+    rdfs:label    "Actuel"@fr;
+    rdfs:label    "实时"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/cur>;
+    rdfs:comment  "Marker tag which indicates the point has capability for subscription to its real-time current value."@en.
+
+:curErr  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:string ;
+        rdfs:subPropertyOf   :HaystackStr ;
+    rdfs:label    "Cur Err"@en;
+    rdfs:label    "Erreur Actuelle"@fr;
+    rdfs:label    "实时错误信息"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/curErr>;
+    rdfs:comment  "Error message associated when curStatus indicates an error condition."@en.
+
+:current  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Current"@en;
+    rdfs:label    "Courant"@fr;
+    rdfs:label    "电流"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/current>;
+    :usedWith     :point;
+    :usedWith     :unit;
+    rdfs:comment  "Electrical current point measured in 'A' for elec meter."@en.
+
+:curStatus  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:string ;
+        rdfs:subPropertyOf   :HaystackStr ;
+    rdfs:label    "Cur Status"@en;
+    rdfs:label    "éTat Actuel"@fr;
+    rdfs:label    "实时状态"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/curStatus>;
+    rdfs:comment  "Current status of a point curVal as one of the predefined strings:"@en.
+
+:curVal  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty ;
+         rdfs:subPropertyOf   :HaystackObj ;
+    rdfs:label    "Cur Val"@en;
+    rdfs:label    "Valeur Actuelle"@fr;
+    rdfs:label    "实时值"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/curVal>;
+    rdfs:comment  "Current value of a point or other value record"@en.
+
+:damper  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Damper"@en;
+    rdfs:label    "Volet"@fr;
+    rdfs:label    "阀门开度"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/damper>;
+    :usedWith     :point;
+    :usedWith     :unit;
+    rdfs:comment  "Damper position measured from 0% (fully closed) to 100% (fully open)."@en.
+
+:delta  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Delta"@en;
+    rdfs:label    "Delta"@fr;
+    rdfs:label    "差值"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/delta>;
+    rdfs:seeAlso  :entering;
+    rdfs:seeAlso  :leaving;
+    :usedWith     :point;
+    rdfs:comment  "Indicates a differential of air water or steam between the entering and leaving sensors."@en.
+
+:device  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Device"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/device>;
+    rdfs:seeAlso  :network;
+    rdfs:seeAlso  :connection;
+    rdfs:comment  "Models a physical device on a communication network. Devices include servers area controllers field controllers and networking gear."@en.
+
+:device1Ref  rdf:type   owl:AsymmetricProperty, owl:IrreflexiveProperty, owl:ObjectProperty, owl:FunctionalProperty ;
+        rdfs:subPropertyOf   :HaystackRef ;
+    rdfs:label    "Device1 Ref"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/device1Ref>;
+    :usedWith     :connection;
+    rdfs:comment  "Models the first end point device of a connection"@en.
+
+:device2Ref  rdf:type   owl:AsymmetricProperty, owl:IrreflexiveProperty, owl:ObjectProperty, owl:FunctionalProperty ;
+        rdfs:subPropertyOf   :HaystackRef ;
+    rdfs:label    "Device2 Ref"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/device2Ref>;
+    :usedWith     :connection;
+    rdfs:comment  "Models the second end point device of a connection"@en.
+
+:directZone  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Direct Zone"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/directZone>;
+    :usedWith     :ahu;
+    rdfs:comment  "Marker for an ahu which delivers air directly to a zone."@en.
+
+:dis  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:string ;
+        rdfs:subPropertyOf   :HaystackStr ;
+    rdfs:label    "Dis"@en;
+    rdfs:label    "Affichage"@fr;
+    rdfs:label    "显示名称"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/dis>;
+    rdfs:comment  "Short display name for an entity."@en.
+
+:discharge  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Discharge"@en;
+    rdfs:label    "DéCharge"@fr;
+    rdfs:label    "排风"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/discharge>;
+    :usedWith     :point;
+    rdfs:comment  "Associated with the discharge air an ahu or vav."@en.
+
+:domestic  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Domestic"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/domestic>;
+    :usedWith     :water;
+    rdfs:comment  "Paired with water to indicate control or measurement of tap water used for drinking washing cooking and flushing of toliets."@en.
+
+:dualDuct  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Dual Duct"@en;
+    rdfs:label    "Gaine Double"@fr;
+    rdfs:label    "双盘管"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/dualDuct>;
+    :usedWith     :ahu;
+    :usedWith     :vav;
+    rdfs:comment  "Indicates an ahu which discharges into two ducts which are some combinatin of hotDeck coldDeck or neutralDeck."@en.
+
+:effective  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Effective"@en;
+    rdfs:label    "Actuelle"@fr;
+    rdfs:label    "生效"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/effective>;
+    rdfs:seeAlso  :heating;
+    rdfs:seeAlso  :cooling;
+    :usedWith     :point;
+    :usedWith     :sp;
+    rdfs:comment  "Used to indicate the effective setpoint which takes into account if a unit is operating in cooling or heating mode."@en.
+
+:efficiency  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Efficiency"@en;
+    rdfs:label    "Efficacité"@fr;
+    rdfs:label    "能效"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/efficiency>;
+    :usedWith     :point;
+    rdfs:comment  "Efficiency point of a chiller measured in 'COP' or 'kW/ton'."@en.
+
+:elec  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Elec"@en;
+    rdfs:label    "éLectrique"@fr;
+    rdfs:seeAlso  <http://project-haystack.org/tag/elec>;
+    :usedWith     :point;
+    :usedWith     :meter;
+    rdfs:comment  "Used on point or equip entities relating to electricity. When paried with meter indicates a electric meter."@en.
+
+:elecMeterLoad  rdf:type   owl:AsymmetricProperty, owl:IrreflexiveProperty, owl:ObjectProperty, owl:FunctionalProperty ;
+        rdfs:subPropertyOf   :HaystackRef ;
+    rdfs:label    "Elec Meter Load"@en;
+    rdfs:label    "MesurageÉLectrique Charge"@fr;
+    rdfs:label    "电负荷"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/elecMeterLoad>;
+    :usedWith     :point;
+    :usedWith     :equip;
+    rdfs:comment  "Equip or point which consumes energy as electrial load. Value should reference the meter it is associated with."@en.
+
+:elecMeterRef  rdf:type   owl:AsymmetricProperty, owl:IrreflexiveProperty, owl:ObjectProperty, owl:FunctionalProperty ;
+        rdfs:subPropertyOf   :HaystackRef ;
+    rdfs:label    "Elec Meter Ref"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/elecMeterRef>;
+    :usedWith     :equip;
+    :usedWith     :elecPanel;
+    rdfs:comment  "Associates a piece of equipment with an elec meter."@en.
+
+:elecPanel  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Elec Panel"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/elecPanel>;
+    rdfs:seeAlso  :circuit;
+    rdfs:seeAlso  :meter;
+    :usedWith     :equip;
+    rdfs:comment  "An equip which models the physical housing for electric circuits."@en.
+
+:elecPanelOf  rdf:type   owl:AsymmetricProperty, owl:IrreflexiveProperty, owl:ObjectProperty, owl:FunctionalProperty ;
+        rdfs:subPropertyOf   :HaystackRef ;
+    rdfs:label    "Elec Panel Of"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/elecPanelOf>;
+    :usedWith     :circuit;
+    rdfs:comment  "Associates a circuit with its elecPanel."@en.
+
+:enable  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Enable"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/enable>;
+    :usedWith     :point;
+    rdfs:comment  "Secondary on/off point of an equip especially used with a vfd. Enable is used with Bool points where true indicates on and false indicates off. Equip with an enable should always also define a run point which indicates the primary on/off state of the equipment."@en.
+
+:energy  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Energy"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/energy>;
+    rdfs:seeAlso  :power;
+    :usedWith     :point;
+    :usedWith     :unit;
+    rdfs:comment  "Applied to point entities which measure energy consumption:"@en.
+
+:entering  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Entering"@en;
+    rdfs:label    "Entrant"@fr;
+    rdfs:label    "进气/进水"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/entering>;
+    rdfs:seeAlso  :leaving;
+    rdfs:seeAlso  :delta;
+    :usedWith     :point;
+    rdfs:comment  "Indicates water or steam entering a piece of equipment like a boiler or chiller. Used with vav for air flow into the unit from the AHU."@en.
+
+:enum  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:string ;
+        rdfs:subPropertyOf   :HaystackStr ;
+    rdfs:label    "Enum"@en;
+    rdfs:label    "Enum"@fr;
+    rdfs:label    "信号显示值"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/enum>;
+    rdfs:comment  "Comma separated list of text names to use for Bool or Str point. It is strongly recommended that text names do not include special characters. If annotating a Bool point then the names are ordered 'falsetrue'. Examples:"@en.
+
+:equip  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Equip"@en;
+    rdfs:label    "éQuipement"@fr;
+    rdfs:label    "设备"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/equip>;
+    rdfs:seeAlso  :site;
+    rdfs:seeAlso  :point;
+    rdfs:seeAlso  :equipRef;
+    :usedWith     :siteRef;
+    rdfs:comment  "Equipment asset."@en.
+
+:equipRef  rdf:type   owl:AsymmetricProperty, owl:IrreflexiveProperty, owl:ObjectProperty, owl:FunctionalProperty ;
+        rdfs:subPropertyOf   :HaystackRef ;
+    rdfs:label    "Equip Ref"@en;
+    rdfs:label    "éQuipement RéF"@fr;
+    rdfs:label    "附属设备"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/equipRef>;
+    rdfs:seeAlso  :site;
+    rdfs:seeAlso  :equip;
+    :usedWith     :point;
+    :usedWith     :equip;
+    rdfs:comment  "Association with an equip entity. When used on a point this indicates a sensor/cmd/setpoint associated with the equipment. When used on an equip it indicates nesting/containment."@en.
+
+:evaporator  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Evaporator"@en;
+    rdfs:label    "éVaporateur"@fr;
+    rdfs:label    "蒸发器"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/evaporator>;
+    rdfs:seeAlso  :condenser;
+    rdfs:seeAlso  :chiller;
+    :usedWith     :point;
+    rdfs:comment  "Indicates points on the evaporator mechanism used to convert a refrigerant from its liquid to gageous state. It is often paired with the refrig marker tag."@en.
+
+:exhaust  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Exhaust"@en;
+    rdfs:label    "éVacuation"@fr;
+    rdfs:label    "排气"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/exhaust>;
+    :usedWith     :point;
+    rdfs:comment  "Associated with the exhaust air an ahu."@en.
+
+:faceBypass  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Face Bypass"@en;
+    rdfs:label    "FaceÉVitement"@fr;
+    rdfs:label    "气流旁通"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/faceBypass>;
+    :usedWith     :point;
+    :usedWith     :unit;
+    rdfs:comment  "A point of an ahu indicating air flow is by-passing the heating/cooling elements. If a boolean point then true indicates the unit is in by-pass mode and false indicates by-pass is disabled. If the point is an analog point then 100% indicates full by-pass mode and 0% that by-pass is completely disabled."@en.
+
+:fan  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Fan"@en;
+    rdfs:label    "Ventilateur"@fr;
+    rdfs:label    "风机"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/fan>;
+    :usedWith     :equip;
+    :usedWith     :point;
+    :usedWith     :unit;
+    rdfs:comment  "Fan point or equip associated with an ahu vav or coolingTower."@en.
+
+:filter  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Filter"@en;
+    rdfs:label    "Filtre"@fr;
+    rdfs:label    "滤清器"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/filter>;
+    :usedWith     :point;
+    :usedWith     :unit;
+    rdfs:comment  "Differential pressure across the filter of an ahu. If a boolean point then true indicates successful airflow and false indicates a clogged filter. If a numeric then the pressure differential should be measured in 'inH₂O' or 'kPa'"@en.
+
+:flow  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Flow"@en;
+    rdfs:label    "DéBit"@fr;
+    rdfs:label    "流量"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/flow>;
+    rdfs:seeAlso  :volume;
+    :usedWith     :point;
+    :usedWith     :unit;
+    rdfs:comment  "Marker tag on a point which measures rate of volume currently flowing through a flow meter duct or pipe ."@en.
+
+:freezeStat  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Freeze Stat"@en;
+    rdfs:label    "Basse Limite Gel"@fr;
+    rdfs:label    "防冻状态"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/freezeStat>;
+    :usedWith     :point;
+    rdfs:comment  "A boolean point of an ahu indicating a freezing condition which might require a control sequence to protect the equipment. If true then a freeze condition is deteted or false if not."@en.
+
+:freq  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Freq"@en;
+    rdfs:label    "FréQuence"@fr;
+    rdfs:label    "频率"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/freq>;
+    :usedWith     :point;
+    :usedWith     :unit;
+    rdfs:comment  "Electrical A/C frequency point measured in 'Hz' for elec meter or a vfd."@en.
+
+:gas  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Gas"@en;
+    rdfs:label    "Gaz"@fr;
+    rdfs:seeAlso  <http://project-haystack.org/tag/gas>;
+    :usedWith     :point;
+    :usedWith     :meter;
+    rdfs:comment  "Used on point or equip entities relating to natural gas. When paried with meter indicates a gas meter."@en.
+
+:gasMeterLoad  rdf:type   owl:AsymmetricProperty, owl:IrreflexiveProperty, owl:ObjectProperty, owl:FunctionalProperty ;
+        rdfs:subPropertyOf   :HaystackRef ;
+    rdfs:label    "Gas Meter Load"@en;
+    rdfs:label    "Mesurage Gaz Charge"@fr;
+    rdfs:label    "燃气负载"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/gasMeterLoad>;
+    :usedWith     :point;
+    :usedWith     :equip;
+    rdfs:comment  "Equip or point which consumes fuel gas as load. Value should reference the meter it is associated with."@en.
+
+:geoAddr  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:string ;
+        rdfs:subPropertyOf   :HaystackStr ;
+    rdfs:label    "Geo Addr"@en;
+    rdfs:label    "GéO Adresse"@fr;
+    rdfs:label    "地址"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/geoAddr>;
+    rdfs:seeAlso  :geoCity;
+    rdfs:seeAlso  :geoCountry;
+    rdfs:seeAlso  :geoCoord;
+    rdfs:seeAlso  :geoPostalCode;
+    rdfs:seeAlso  :geoState;
+    rdfs:seeAlso  :geoStreet;
+    :usedWith     :site;
+    :usedWith     :weather;
+    rdfs:comment  "Geographic street address. This is a free form string which may be used to geocode specific geolocation tags."@en.
+
+:geoCity  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:string ;
+        rdfs:subPropertyOf   :HaystackStr ;
+    rdfs:label    "Geo City"@en;
+    rdfs:label    "GéO Ville"@fr;
+    rdfs:label    "城市"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/geoCity>;
+    :usedWith     :site;
+    :usedWith     :weather;
+    :usedWith     :geoAddr;
+    rdfs:comment  "Geographic city or locality name."@en.
+
+:geoCoord  rdfs:subClassOf      :HaystackCoord;
+    rdfs:label    "Geo Coord"@en;
+    rdfs:label    "GéO CoordonnéEs"@fr;
+    rdfs:label    "坐标"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/geoCoord>;
+    :usedWith     :site;
+    :usedWith     :weather;
+    :usedWith     :geoAddr;
+    rdfs:comment  "Geographic coordinate as 'C(latitudelongitude)'"@en.
+
+:geoCountry  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:string ;
+        rdfs:subPropertyOf   :HaystackStr ;
+    rdfs:label    "Geo Country"@en;
+    rdfs:label    "GéO Pays"@fr;
+    rdfs:label    "国家"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/geoCountry>;
+    :usedWith     :site;
+    :usedWith     :weather;
+    :usedWith     :geoAddr;
+    rdfs:comment  "Geographic country as ISO 3166-1 two letter code. Codes for common countries:"@en.
+
+:geoCounty  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:string ;
+        rdfs:subPropertyOf   :HaystackStr ;
+    rdfs:label    "Geo County"@en;
+    rdfs:label    "GéO Comté"@fr;
+    rdfs:label    "县"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/geoCounty>;
+    rdfs:comment  "Geographic subdivision of US state."@en.
+
+:geoPostalCode  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:string ;
+        rdfs:subPropertyOf   :HaystackStr ;
+    rdfs:label    "Geo Postal Code"@en;
+    rdfs:label    "GéO Code Postal"@fr;
+    rdfs:label    "邮编"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/geoPostalCode>;
+    :usedWith     :site;
+    :usedWith     :weather;
+    :usedWith     :geoAddr;
+    rdfs:comment  "Geographic postal code; for US this is a five digit zip code."@en.
+
+:geoState  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:string ;
+        rdfs:subPropertyOf   :HaystackStr ;
+    rdfs:label    "Geo State"@en;
+    rdfs:label    "GéOÉTat- Province"@fr;
+    rdfs:label    "省/自治区/直辖市"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/geoState>;
+    :usedWith     :site;
+    :usedWith     :weather;
+    :usedWith     :geoAddr;
+    rdfs:comment  "State or province name; for US this is two letter state code. This tag may also be used to model an adminstrative area betwen the geoCity and geoCountry level."@en.
+
+:geoStreet  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:string ;
+        rdfs:subPropertyOf   :HaystackStr ;
+    rdfs:label    "Geo Street"@en;
+    rdfs:label    "GéO Rue"@fr;
+    rdfs:label    "街道"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/geoStreet>;
+    :usedWith     :site;
+    :usedWith     :weather;
+    :usedWith     :geoAddr;
+    rdfs:comment  "Geographic street number and name."@en.
+
+:heat  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Heat"@en;
+    rdfs:label    "Chauffage"@fr;
+    rdfs:label    "热盘管"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/heat>;
+    rdfs:seeAlso  :cool;
+    rdfs:seeAlso  :heating;
+    :usedWith     :point;
+    rdfs:comment  "Heating coil as bool or float point on an ahu or vav. If multiple stages are used then also specify the stage tag. If the heating coil is controlled by a valve then this point is mesaured from 0% to 100% otherwise it should be a boolean point."@en.
+
+:heatExchanger  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Heat Exchanger"@en;
+    rdfs:label    "éChangeur Chaleur (RéCupéRateur Chaleur)"@fr;
+    rdfs:label    "换热器"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/heatExchanger>;
+    :usedWith     :equip;
+    rdfs:comment  "Heat exchangers are used to transfer heat from one medium to another."@en.
+
+:heating  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Heating"@en;
+    rdfs:label    "Chauffage"@fr;
+    rdfs:label    "制热"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/heating>;
+    rdfs:seeAlso  :cooling;
+    rdfs:seeAlso  :effective;
+    rdfs:seeAlso  :heat;
+    :usedWith     :point;
+    rdfs:comment  "Associated with the heating mode of an HVAC system."@en.
+
+:heatWheel  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Heat Wheel"@en;
+    rdfs:label    "Roue Thermique"@fr;
+    rdfs:label    "转轮式换热器"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/heatWheel>;
+    :usedWith     :point;
+    rdfs:comment  "Bool point which models the on or off state of an ahu heat wheel."@en.
+
+:his  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "His"@en;
+    rdfs:label    "Historique (His"@fr;
+    rdfs:label    "历史记录"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/his>;
+    :usedWith     :point;
+    rdfs:comment  "Indicates that a point is historized with a history log of timestamp/value pairs."@en.
+
+:hisErr  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:string ;
+        rdfs:subPropertyOf   :HaystackStr ;
+    rdfs:label    "His Err"@en;
+    rdfs:label    "His Erreur (Erreur Historique)"@fr;
+    rdfs:label    "历史错误信息"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/hisErr>;
+    rdfs:comment  "Error message associated when hisStatus indicates an error condition."@en.
+
+:hisInterpolate  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:string ;
+        rdfs:subPropertyOf   :HaystackStr ;
+    rdfs:label    "His Interpolate"@en;
+    rdfs:label    "His Interpolation"@fr;
+    rdfs:label    "历史数据间隔方式"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/hisInterpolate>;
+    rdfs:comment  "Indicates how interpolation of a historized point should be handled. Valid values are 'cov' and 'linear':"@en.
+
+:hisStatus  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:string ;
+        rdfs:subPropertyOf   :HaystackStr ;
+    rdfs:label    "His Status"@en;
+    rdfs:label    "HisÉTat"@fr;
+    rdfs:label    "历史状态"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/hisStatus>;
+    rdfs:comment  "Current status of a point history sync as one of the predefined strings:"@en.
+
+:hisTotalized  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "His Totalized"@en;
+    rdfs:label    "His Totalisation"@fr;
+    rdfs:label    "累计值"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/hisTotalized>;
+    rdfs:comment  "Indicates values which are a continuous stream of totalization and should be read by computing the delta."@en.
+
+:hot  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Hot"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/hot>;
+    :usedWith     :water;
+    rdfs:comment  "Paired with water to indicate control or measurement of hot water."@en.
+
+:hotDeck  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Hot Deck"@en;
+    rdfs:label    "Gaine Chaude"@fr;
+    rdfs:label    "供热管道"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/hotDeck>;
+    :usedWith     :point;
+    rdfs:comment  "Associated with the hot air ductwork in a dualDuct or tripleDuct AHU."@en.
+
+:humidifier  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Humidifier"@en;
+    rdfs:label    "Humidificateur"@fr;
+    rdfs:label    "加湿器"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/humidifier>;
+    :usedWith     :point;
+    rdfs:comment  "Boolean or numeric point of an ahu used to indicate if if the humidifier is on or off."@en.
+
+:humidity  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Humidity"@en;
+    rdfs:label    "Humidité"@fr;
+    rdfs:label    "湿度"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/humidity>;
+    :usedWith     :point;
+    :usedWith     :unit;
+    rdfs:comment  "Humidity measured from 0% to 100%."@en.
+
+:hvac  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "HVAC"@en;
+    rdfs:label    "C V A C (Hvac)"@fr;
+    rdfs:label    "H V A C  //暖通空调"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/hvac>;
+    rdfs:comment  "Associated with HVAC (Heating Ventilating Air Conditioning)"@en.
+
+:id  rdf:type   owl:AsymmetricProperty, owl:IrreflexiveProperty, owl:ObjectProperty, owl:FunctionalProperty ;
+        rdfs:subPropertyOf   :HaystackRef ;
+    rdfs:label    "ID"@en;
+    rdfs:label    "ID"@fr;
+    rdfs:label    "I D"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/id>;
+    :usedWith     :point;
+    rdfs:comment  "Unique identifier for an entity."@en.
+
+:isolation  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Isolation"@en;
+    rdfs:label    "Isolation"@fr;
+    rdfs:label    "隔离阀"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/isolation>;
+    :usedWith     :point;
+    :usedWith     :valve;
+    rdfs:comment  "Indicates a valve used to isolate a piece of equipment from a piping system."@en.
+
+:kind  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:string ;
+        rdfs:subPropertyOf   :HaystackStr ;
+    rdfs:label    "Kind"@en;
+    rdfs:label    "Sorte"@fr;
+    rdfs:label    "类型"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/kind>;
+    rdfs:comment  "Defines a tag value type using a predefined string constant. When used on a point the kind is expected to be 'Bool' 'Number' or 'Str'."@en.
+
+:leaving  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Leaving"@en;
+    rdfs:label    "Sortant"@fr;
+    rdfs:label    "供水/供汽"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/leaving>;
+    rdfs:seeAlso  :entering;
+    rdfs:seeAlso  :delta;
+    :usedWith     :point;
+    rdfs:comment  "Indicates water or steam exiting a piece of equipment like a boiler or chiller."@en.
+
+:lighting  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Lighting"@en;
+    rdfs:label    "éClairage"@fr;
+    rdfs:label    "照明系统"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/lighting>;
+    rdfs:comment  "Indicates association with the lighting system."@en.
+
+:lightLevel  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Light Level"@en;
+    rdfs:label    "éClairage Niveau"@fr;
+    rdfs:label    "亮度"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/lightLevel>;
+    :usedWith     :point;
+    :usedWith     :unit;
+    rdfs:comment  "Light level sensor point under lightsGroup measured in 'lux' or 'lumen'."@en.
+
+:lights  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Lights"@en;
+    rdfs:label    "LumièRes"@fr;
+    rdfs:label    "灯光状态"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/lights>;
+    :usedWith     :point;
+    :usedWith     :unit;
+    rdfs:comment  "Lighting on/off status as a boolean or if dimmable a numeric between 0% and 100%."@en.
+
+:lightsGroup  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Lights Group"@en;
+    rdfs:label    "LumièRes Groupe (Groupe LumièRes)"@fr;
+    rdfs:label    "灯组"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/lightsGroup>;
+    :usedWith     :equip;
+    rdfs:comment  "Equip level of the lighting system which is a group of one or more lights points."@en.
+
+:load  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Load"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/load>;
+    :usedWith     :point;
+    :usedWith     :unit;
+    rdfs:comment  "Models a point on a chiller used to command or measure the chiller's load as a percentage from '0%' to '100%'. When paired with cmd this models the chiller's load limit. When paired with sensor this models the chiller's current load factor."@en.
+
+:makeup  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Makeup"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/makeup>;
+    :usedWith     :water;
+    rdfs:comment  "Paired with water to indicate control or measurement of the makeup water in a coolingTower or boiler used to replace water lost through leaks evaporation or blowdown."@en.
+
+:maxVal  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:double ;
+        rdfs:subPropertyOf   :HaystackNumber ;
+    rdfs:label    "Max Val"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/maxVal>;
+    rdfs:seeAlso  :minVal;
+    :usedWith     :point;
+    rdfs:comment  "Applied to point to define the maximum value to read from a sensor or to write from a command/setpoint. This value's unit must match the point's unit tag."@en.
+
+:meter  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Meter"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/meter>;
+    :usedWith     :equip;
+    :usedWith     :siteMeter;
+    :usedWith     :submeterOf;
+    rdfs:comment  "Equip which meters usage of elec energy thermal energy gas water or steam."@en.
+
+:minVal  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:double ;
+        rdfs:subPropertyOf   :HaystackNumber ;
+    rdfs:label    "Min Val"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/minVal>;
+    rdfs:seeAlso  :maxVal;
+    :usedWith     :point;
+    rdfs:comment  "Applied to point to define the minumum value to read from a sensor or to write from a command/setpoint. This value's unit must match the point's unit tag."@en.
+
+:mixed  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Mixed"@en;
+    rdfs:label    "MéLange"@fr;
+    rdfs:label    "混合空气"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/mixed>;
+    :usedWith     :point;
+    rdfs:comment  "Associated with the mixed air of an ahu."@en.
+
+:multiZone  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Multi Zone"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/multiZone>;
+    :usedWith     :ahu;
+    rdfs:comment  "Marker for an ahu which delivers air to its zones via a ductwork manifold which splits the air into a duct per zone."@en.
+
+:network  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Network"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/network>;
+    rdfs:seeAlso  :device;
+    rdfs:seeAlso  :connection;
+    rdfs:comment  "Network models a communication network between multiple devices."@en.
+
+:networkRef  rdf:type   owl:AsymmetricProperty, owl:IrreflexiveProperty, owl:ObjectProperty, owl:FunctionalProperty ;
+        rdfs:subPropertyOf   :HaystackRef ;
+    rdfs:label    "Network Ref"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/networkRef>;
+    :usedWith     :connection;
+    rdfs:comment  "Models the network of a connection"@en.
+
+:neutralDeck  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Neutral Deck"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/neutralDeck>;
+    :usedWith     :point;
+    rdfs:comment  "Associated with the neutral air ductwork in a dualDuct or tripleDuct AHU. The neutral deck is the duct where air is passed thru neither the heating nor cooling coil."@en.
+
+:occupancyIndicator  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Occupancy Indicator"@en;
+    rdfs:label    "Indicateur Occupation"@fr;
+    rdfs:label    "灯光占用指示器"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/occupancyIndicator>;
+    :usedWith     :point;
+    rdfs:comment  "Occupancy sensor under lightsGroup. Point must be Bool where true indicates occupied and false indicates unoccupied"@en.
+
+:occupied  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Occupied"@en;
+    rdfs:label    "Occupé"@fr;
+    rdfs:label    "占用"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/occupied>;
+    rdfs:seeAlso  :site;
+    rdfs:seeAlso  :equip;
+    :usedWith     :point;
+    rdfs:comment  "Marker tag used with a boolean point to indicate whether a site or zone is occupied (true) or unoccupied (false)."@en.
+
+:openLoop  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Open Loop"@en;
+    rdfs:label    "Boucle Ouverte"@fr;
+    rdfs:label    "开式系统"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/openLoop>;
+    rdfs:seeAlso  :closedLoop;
+    :usedWith     :equip;
+    :usedWith     :coolingTower;
+    rdfs:comment  "Indicates coolingTower which uses the working fluid itself for evaporation into the atmosphere."@en.
+
+:outside  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Outside"@en;
+    rdfs:label    "ExtéRieure"@fr;
+    rdfs:label    "室外"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/outside>;
+    :usedWith     :point;
+    rdfs:comment  "Associated with outside air often used to model ahu points."@en.
+
+:perimeterHeat  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Perimeter Heat"@en;
+    rdfs:label    "Chauffage PéRimèTre"@fr;
+    rdfs:label    "辅助热源"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/perimeterHeat>;
+    :usedWith     :point;
+    rdfs:comment  "Auxiliary heating points associated with a vav."@en.
+
+:pf  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Power Factor"@en;
+    rdfs:label    "Power Factor (Facteur De Puissance / Facteur Puissance)"@fr;
+    rdfs:label    "功率因数"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/pf>;
+    :usedWith     :point;
+    rdfs:comment  "Power factor of an elec meter as a unitless number between 0.0 and 1.0 which represents the ratio of real power over apparent power."@en.
+
+:phase  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:string ;
+        rdfs:subPropertyOf   :HaystackStr ;
+    rdfs:label    "Phase"@en;
+    rdfs:label    "Phase"@fr;
+    rdfs:label    "相位"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/phase>;
+    :usedWith     :volt;
+    :usedWith     :current;
+    :usedWith     :pf;
+    rdfs:comment  "Association of one or more phases in a three-phase electrical system. This string must be one of the following constant values:"@en.
+
+:point  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Point"@en;
+    rdfs:label    "Point"@fr;
+    rdfs:label    "测点"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/point>;
+    :usedWith     :siteRef;
+    :usedWith     :equipRef;
+    :usedWith     :kind;
+    :usedWith     :tz;
+    :usedWith     :unit;
+    rdfs:comment  "Data point such as a sensor or actuator."@en.
+
+:power  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Power"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/power>;
+    rdfs:seeAlso  :energy;
+    :usedWith     :point;
+    :usedWith     :unit;
+    rdfs:comment  "Applied to point entities which measure energy consumed per unit time. For elec meter this is the electrical demand."@en.
+
+:pressure  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Pressure"@en;
+    rdfs:label    "Pression"@fr;
+    rdfs:label    "压力"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/pressure>;
+    :usedWith     :point;
+    :usedWith     :unit;
+    rdfs:comment  "Static air pressure measured in 'inH₂O' or 'kPa'."@en.
+
+:primaryFunction  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:string ;
+        rdfs:subPropertyOf   :HaystackStr ;
+    rdfs:label    "Primary Function"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/primaryFunction>;
+    :usedWith     :site;
+    rdfs:comment  "Enumerated string applied to a site record to indicate the building's primary function. The list of primary functions is derived from the US Energy Star program:"@en.
+
+:primaryLoop  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Primary Loop"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/primaryLoop>;
+    rdfs:seeAlso  :secondaryLoop;
+    :usedWith     :equip;
+    :usedWith     :point;
+    rdfs:comment  "Indicates equipment and points which are associated with a chiller or boiler plant's primary loop - the pipework within the central plant."@en.
+
+:protocol  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:string ;
+        rdfs:subPropertyOf   :HaystackStr ;
+    rdfs:label    "Protocol"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/protocol>;
+    :usedWith     :connection;
+    rdfs:comment  "String enumeration for a connection communication protocol. Standardized values:"@en.
+
+:pump  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Pump"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/pump>;
+    :usedWith     :equip;
+    rdfs:comment  "Marker tag for an equip which models a pump."@en.
+
+:reciprocal  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Reciprocal"@en;
+    rdfs:label    "RéCiproque"@fr;
+    rdfs:label    "活塞压缩机"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/reciprocal>;
+    rdfs:seeAlso  :centrifugal;
+    rdfs:seeAlso  :screw;
+    :usedWith     :equip;
+    :usedWith     :chiller;
+    rdfs:comment  "Indicates chiller compressor which uses pistons driven by a crankshaft."@en.
+
+:refrig  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Refrig"@en;
+    rdfs:label    "RéFrigéRation"@fr;
+    rdfs:label    "冷冻剂"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/refrig>;
+    :usedWith     :point;
+    rdfs:comment  "Indicates points associated with the measurment or control of the refrigerant substance in a cooling system like a chiller."@en.
+
+:return  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Return"@en;
+    rdfs:label    "Retour"@fr;
+    rdfs:label    "回风"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/return>;
+    :usedWith     :point;
+    rdfs:comment  "Associated with the return air an ahu."@en.
+
+:rooftop  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Rooftop"@en;
+    rdfs:label    "Unité Toit"@fr;
+    rdfs:label    "屋顶空调机组"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/rooftop>;
+    :usedWith     :ahu;
+    rdfs:comment  "Used with ahu to mark an AHU as a packaged rooftop unit (RTU)."@en.
+
+:run  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Run"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/run>;
+    rdfs:comment  "Primary on/off point of an equip especially used with a vfd. Run is used with Bool points where true indicates on and false indicates off. When paired with cmd this is the commanded state of the equipment. When paired with sensor this is the actual status of the equip. If the equipment also defines an enable point then both must be commanded on in order to run the equipment."@en.
+
+:screw  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Screw"@en;
+    rdfs:label    "Vis"@fr;
+    rdfs:label    "回转压缩机"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/screw>;
+    rdfs:seeAlso  :centrifugal;
+    rdfs:seeAlso  :reciprocal;
+    :usedWith     :equip;
+    :usedWith     :chiller;
+    rdfs:comment  "Indicates chiller compressor which uses a rotary mechanism."@en.
+
+:secondaryLoop  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Secondary Loop"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/secondaryLoop>;
+    rdfs:seeAlso  :primaryLoop;
+    :usedWith     :equip;
+    :usedWith     :point;
+    rdfs:comment  "Indicates equipment and points which are associated with a chiller or boiler plant's secondary loop - the pipework from the central plant to the building."@en.
+
+:sensor  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Sensor"@en;
+    rdfs:label    "Sonde"@fr;
+    rdfs:label    "传感器"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/sensor>;
+    :usedWith     :point;
+    rdfs:comment  "Classifies a point as an input AI/BI or sensor."@en.
+
+:site  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Site"@en;
+    rdfs:label    "Site"@fr;
+    rdfs:label    "站点"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/site>;
+    :usedWith     :area;
+    :usedWith     :geoAddr;
+    :usedWith     :tz;
+    :usedWith     :weatherRef;
+    rdfs:comment  "Building or other type of facility with unique street address."@en.
+
+:siteMeter  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Site Meter"@en;
+    rdfs:label    "Mesurage Site"@fr;
+    rdfs:label    "站点总表"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/siteMeter>;
+    :usedWith     :meter;
+    rdfs:comment  "Applied to a meter which exclusively meters a single site identified by siteRef. As a general rule there must be a siteMeter for each unique site to perform site benchmarking. This marker may also be used on meter points such as power as a convenience."@en.
+
+:sitePanel  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Site Panel"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/sitePanel>;
+    :usedWith     :elecPanel;
+    rdfs:comment  "Marker tag for a elecPanel to indicate its the main site-level panel."@en.
+
+:siteRef  rdf:type   owl:AsymmetricProperty, owl:IrreflexiveProperty, owl:ObjectProperty, owl:FunctionalProperty ;
+        rdfs:subPropertyOf   :HaystackRef ;
+    rdfs:label    "Site Ref"@en;
+    rdfs:label    "Site RéF"@fr;
+    rdfs:label    "附属站点"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/siteRef>;
+    rdfs:seeAlso  :site;
+    :usedWith     :equip;
+    :usedWith     :point;
+    rdfs:comment  "Association with a site entity."@en.
+
+:sp  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Setpoint"@en;
+    rdfs:label    "Point Consigne (Pc)"@fr;
+    rdfs:label    "设定值"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/sp>;
+    :usedWith     :point;
+    rdfs:comment  "Classifies a point as a setpoint soft point or process control variable."@en.
+
+:speed  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Speed"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/speed>;
+    :usedWith     :point;
+    :usedWith     :unit;
+    rdfs:comment  "Speed point of a vfd measured in '%' where 0% is off and 100% is the fastest speed."@en.
+
+:stage  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:double ;
+        rdfs:subPropertyOf   :HaystackNumber ;
+    rdfs:label    "Stage"@en;
+    rdfs:label    "Stage"@fr;
+    rdfs:label    "阶段"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/stage>;
+    :usedWith     :cool;
+    :usedWith     :heat;
+    rdfs:comment  "Indicates the stage of an AHU cooling or heating element. The first stage should have a value of 1 second of 2 etc."@en.
+
+:steam  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Steam"@en;
+    rdfs:label    "Vapeur"@fr;
+    rdfs:label    "蒸汽"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/steam>;
+    :usedWith     :point;
+    :usedWith     :meter;
+    rdfs:comment  "Point associated with the measurement or control of steam. This tag is often paired with entering versus leaving versus delta. It may also be paired with meter to indicate a steam meter."@en.
+
+:steamMeterLoad  rdf:type   owl:AsymmetricProperty, owl:IrreflexiveProperty, owl:ObjectProperty, owl:FunctionalProperty ;
+        rdfs:subPropertyOf   :HaystackRef ;
+    rdfs:label    "Steam Meter Load"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/steamMeterLoad>;
+    :usedWith     :point;
+    :usedWith     :equip;
+    rdfs:comment  "Equip or point which consumes steam as load. Value should reference the meter it is associated with."@en.
+
+:submeterOf  rdf:type   owl:AsymmetricProperty, owl:IrreflexiveProperty, owl:ObjectProperty, owl:FunctionalProperty ;
+        rdfs:subPropertyOf   :HaystackRef ;
+    rdfs:label    "Submeter Of"@en;
+    rdfs:label    "Mesurage Auxiliaire De"@fr;
+    rdfs:label    "子表"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/submeterOf>;
+    :usedWith     :meter;
+    rdfs:comment  "This tag is applied to submeters and references the parent meter."@en.
+
+:subPanelOf  rdf:type   owl:AsymmetricProperty, owl:IrreflexiveProperty, owl:ObjectProperty, owl:FunctionalProperty ;
+        rdfs:subPropertyOf   :HaystackRef ;
+    rdfs:label    "Sub Panel Of"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/subPanelOf>;
+    :usedWith     :elecPanel;
+    rdfs:comment  "Ref tag to indicate that an elecPanel is positioned underneath another panel in the electric distribution system."@en.
+
+:sunrise  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Sunrise"@en;
+    rdfs:label    "Aube"@fr;
+    rdfs:label    "日出"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/sunrise>;
+    rdfs:seeAlso  :weather;
+    :usedWith     :weatherPoint;
+    rdfs:comment  "Boolean point associated with a weather station for historizing sunrise and sunset times. A transition to true indicates sunrise and false transition is sunset."@en.
+
+:temp  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Temp"@en;
+    rdfs:label    "TempéRature"@fr;
+    rdfs:label    "温度"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/temp>;
+    :usedWith     :point;
+    :usedWith     :unit;
+    rdfs:comment  "Temperature measured in °C or °F."@en.
+
+:tripleDuct  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Triple Duct"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/tripleDuct>;
+    :usedWith     :ahu;
+    rdfs:comment  "Indicates an ahu which discharges into three ducts which are the hotDeck coldDeck and neutralDeck."@en.
+
+:tz  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:string ;
+        rdfs:subPropertyOf   :HaystackStr ;
+    rdfs:label    "TZ"@en;
+    rdfs:label    "Fuseau Horaire"@fr;
+    rdfs:label    "时区"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/tz>;
+    :usedWith     :site;
+    :usedWith     :weather;
+    :usedWith     :point;
+    rdfs:comment  "Timezone identifier string which is a city name from the zoneinfo database."@en.
+
+:unit  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:string ;
+        rdfs:subPropertyOf   :HaystackStr ;
+    rdfs:label    "Unit"@en;
+    rdfs:label    "Unité"@fr;
+    rdfs:label    "单位"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/unit>;
+    rdfs:comment  "Unit of measurement identifier from unit database."@en.
+
+:valve  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Valve"@en;
+    rdfs:label    "Vanne"@fr;
+    rdfs:label    "阀门"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/valve>;
+    :usedWith     :point;
+    rdfs:comment  "Marker tag on point which indicates a valve used to regulate or control the flow or pressure of a fluid. It is used with cmd to indicate the valve command: true/false (open/close) or 0% to 100%. It may also be used with sensor to indicate a feedback sensor such as a voltage giving exact position between 0% and 100%."@en.
+
+:variableVolume  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Variable Volume"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/variableVolume>;
+    rdfs:seeAlso  :constantVolume;
+    :usedWith     :ahu;
+    rdfs:comment  "Marks an ahu as delivering a variable volume of air flow. Most variable volume systems are powered by a VFD fan. However other techniques such as inlet vanes may be used in older systems."@en.
+
+:vav  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "VAV"@en;
+    rdfs:label    "BoîTe Volume Variable ( V A V"@fr;
+    rdfs:label    "V A V  //变风量系统"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/vav>;
+    :usedWith     :equip;
+    rdfs:comment  "Variable Volume Volume supply duct equip."@en.
+
+:vavZone  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "VAV Zone"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/vavZone>;
+    :usedWith     :ahu;
+    rdfs:comment  "Marker for an ahu which delivers air to zones via vav terminal units."@en.
+
+:vfd  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "VFD"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/vfd>;
+    :usedWith     :equip;
+    rdfs:comment  "Marker for a motor equip with variable frequency drive. Commonly used in combination with fan and pump."@en.
+
+:volt  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Volt"@en;
+    rdfs:label    "Volet"@fr;
+    rdfs:label    "电压"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/volt>;
+    :usedWith     :point;
+    :usedWith     :unit;
+    rdfs:comment  "Electrical voltage point measured in 'V' for elec meter."@en.
+
+:volume  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Volume"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/volume>;
+    rdfs:seeAlso  :flow;
+    :usedWith     :point;
+    :usedWith     :unit;
+    rdfs:comment  "Marker tag on a point which measures total volume which has flowed through a meter duct or pipe. Volume units include 'gal' 'm³' and 'ft³'."@en.
+
+:water  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Water"@en;
+    rdfs:label    "Eau"@fr;
+    rdfs:label    "水"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/water>;
+    :usedWith     :point;
+    :usedWith     :meter;
+    rdfs:comment  "Point associated with the measurement or control of water. This tag is often paired:"@en.
+
+:waterCooled  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Water Cooled"@en;
+    rdfs:label    "Eau Refroidie"@fr;
+    rdfs:label    "水冷"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/waterCooled>;
+    :usedWith     :equip;
+    :usedWith     :chiller;
+    rdfs:comment  "Indicates chiller which uses water to cool the hot refrigerant."@en.
+
+:waterMeterLoad  rdf:type   owl:AsymmetricProperty, owl:IrreflexiveProperty, owl:ObjectProperty, owl:FunctionalProperty ;
+        rdfs:subPropertyOf   :HaystackRef ;
+    rdfs:label    "Water Meter Load"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/waterMeterLoad>;
+    :usedWith     :point;
+    :usedWith     :equip;
+    rdfs:comment  "Equip or point which consumes water as load. Value should reference the meter it is associated with."@en.
+
+:weather  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Weather"@en;
+    rdfs:label    "MéTéO"@fr;
+    rdfs:label    "气象"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/weather>;
+    :usedWith     :geoCity;
+    :usedWith     :geoState;
+    :usedWith     :geoCountry;
+    :usedWith     :geoCoord;
+    :usedWith     :tz;
+    rdfs:comment  "Marker tag for a weather station entity."@en.
+
+:weatherCond  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:double ;
+        rdfs:subPropertyOf   :HaystackNumber ;
+    rdfs:label    "Weather Cond"@en;
+    rdfs:label    "MéTéO Conditions (Conditions MéTéOrologiques)"@fr;
+    rdfs:label    "气象条件"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/weatherCond>;
+    rdfs:seeAlso  :weather;
+    :usedWith     :weatherPoint;
+    rdfs:comment  "Conditions point of weather station as a enumeration:"@en.
+
+:weatherPoint  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Weather Point"@en;
+    rdfs:label    "MéTéO Point"@fr;
+    rdfs:label    "气象测点"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/weatherPoint>;
+    rdfs:seeAlso  :weather;
+    :usedWith     :tz;
+    :usedWith     :unit;
+    rdfs:comment  "Point sensor value associated with a weather station."@en.
+
+:weatherRef  rdf:type   owl:AsymmetricProperty, owl:IrreflexiveProperty, owl:ObjectProperty, owl:FunctionalProperty ;
+        rdfs:subPropertyOf   :HaystackRef ;
+    rdfs:label    "Weather Ref"@en;
+    rdfs:label    "MéTéO RéF"@fr;
+    rdfs:label    "参考气象"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/weatherRef>;
+    rdfs:seeAlso  :weather;
+    :usedWith     :site;
+    rdfs:comment  "Associates an entity with a weather station."@en.
+
+:wetBulb  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Wet Bulb"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/wetBulb>;
+    rdfs:seeAlso  :weather;
+    :usedWith     :point;
+    :usedWith     :temp;
+    rdfs:comment  "Associates a point with the wet-bulb temperature. This is the temperature air would have if cooled to saturation by the evaporation of water into it. Dry bulb temperatures are indicated by use of the air tag."@en.
+
+:writable  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Writable"@en;
+    rdfs:label    "éCriture"@fr;
+    rdfs:label    "可写测点"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/writable>;
+    rdfs:comment  "Annotates a point as a writable output with 16-level priority array."@en.
+
+:writeErr  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:string ;
+        rdfs:subPropertyOf   :HaystackStr ;
+    rdfs:label    "Write Err"@en;
+    rdfs:label    "éCriture Erreur"@fr;
+    rdfs:label    "写点错误信息"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/writeErr>;
+    rdfs:comment  "Error message associated when writeStatus indicates an error condition."@en.
+
+:writeLevel  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:double ;
+        rdfs:subPropertyOf   :HaystackNumber ;
+    rdfs:label    "Write Level"@en;
+    rdfs:label    "éCriture Niveau"@fr;
+    rdfs:label    "写点优先级"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/writeLevel>;
+    rdfs:comment  "Current priority level for writeVal as number between 1 and 17. The value 17 indicates the relinquish default value."@en.
+
+:writeStatus  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:string ;
+        rdfs:subPropertyOf   :HaystackStr ;
+    rdfs:label    "Write Status"@en;
+    rdfs:label    "éCriture Statut"@fr;
+    rdfs:label    "写点状态"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/writeStatus>;
+    rdfs:comment  "Current status of a writable point output:"@en.
+
+:writeVal  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty ;
+         rdfs:subPropertyOf   :HaystackObj ;
+    rdfs:label    "Write Val"@en;
+    rdfs:label    "éCriture Valeur"@fr;
+    rdfs:label    "写点值"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/writeVal>;
+    rdfs:comment  "Current desired value to write to output."@en.
+
+:yearBuilt  rdf:type   owl:DatatypeProperty, owl:FunctionalProperty; rdfs:range xsd:double ;
+        rdfs:subPropertyOf   :HaystackNumber ;
+    rdfs:label    "Year Built"@en;
+    rdfs:seeAlso  <http://project-haystack.org/tag/yearBuilt>;
+    :usedWith     :site;
+    rdfs:comment  "Tag on site which is four digit year that a building was first built."@en.
+
+:zone  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label    "Zone"@en;
+    rdfs:label    "Zone"@fr;
+    rdfs:label    "区域"@zh;
+    rdfs:seeAlso  <http://project-haystack.org/tag/zone>;
+    :usedWith     :point;
+    :usedWith     :unit;
+    rdfs:comment  "Associated with a conditioned zone of a building."@en.
+
+:fcu  rdfs:subClassOf      :HaystackMarker;
+    rdfs:label  "FCU"@en.
+
+:ahu_set  rdfs:subClassOf      :HaystackMarkerSet;
+    rdfs:label  "AHU set"@en.
+
+:ahu_discharge_air_temp_sensor  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :discharge ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "AHU Discharge Air Temp Sensor"@en.
+
+:ahu_discharge_air_humidity_sensor  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :discharge ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :humidity ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "AHU Discharge Air Humidity Sensor"@en.
+
+:ahu_discharge_air_pressure_sensor  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :discharge ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :pressure ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "AHU Discharge Air Pressure Sensor"@en.
+
+:ahu_discharge_air_flow_sensor  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :discharge ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :flow ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "AHU Discharge Air Flow Sensor"@en.
+
+:ahu_discharge_air_fan_cmd  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :discharge ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fan ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "AHU Discharge Air Fan Command"@en.
+
+:ahu_discharge_air_fan_sensor  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :discharge ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fan ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "AHU Discharge Air Fan Sensor"@en.
+
+:ahu_return_air_temp_sensor  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :return ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "AHU Return Air Temp Sensor"@en.
+
+:ahu_return_air_humidity_sensor  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :return ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :humidity ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "AHU Return Air Humidity Sensor"@en.
+
+:ahu_return_air_pressure_sensor  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :return ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :pressure ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "AHU Return Air Pressure Sensor"@en.
+
+:ahu_return_air_flow_sensor  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :return ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :flow ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "AHU Return Air Flow Sensor"@en.
+
+:ahu_return_air_co2_sensor  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :return ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :co2 ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "AHU Return Air CO2 Sensor"@en.
+
+:ahu_return_air_fan_cmd  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :return ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fan ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "AHU Return Air Fan Command"@en.
+
+:ahu_return_air_damper_cmd  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :return ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :damper ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "AHU Return Air Damper Command"@en.
+
+:ahu_mixed_air_temp_sensor  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :mixed ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "AHU Mixed Air Temp Sensor"@en.
+
+:ahu_zone_air_temp_sensor  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :zone ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "AHU Zone Air Temp Sensor"@en.
+
+:ahu_zone_air_humidity_sensor  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :zone ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :humidity ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "AHU Zone Air Humidity Sensor"@en.
+
+:ahu_zone_air_co2_sensor  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :zone ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :co2 ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "AHU Zone Air CO2 Sensor"@en.
+
+:ahu_zone_air_temp_effective_sp  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :zone ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :effective ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sp ]
+    ) ] ;
+    rdfs:label  "AHU Zone Air Temp Effective Setpoint"@en.
+
+:ahu_zone_air_temp_cooling_sp  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :zone ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cooling ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sp ]
+    ) ] ;
+    rdfs:label  "AHU Zone Air Temp Cooling Setpoint"@en.
+
+:ahu_zone_air_temp_heating_sp  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :zone ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :heating ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sp ]
+    ) ] ;
+    rdfs:label  "AHU Zone Air Temp Heating Setpoint"@en.
+
+:ahu_outside_air_temp_sensor  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :outside ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "AHU Outside Air Temp Sensor"@en.
+
+:ahu_outside_air_humidity_sensor  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :outside ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :humidity ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "AHU Outside Air Humidity Sensor"@en.
+
+:ahu_outside_air_pressure_sensor  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :outside ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :pressure ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "AHU Outside Air Pressure Sensor"@en.
+
+:ahu_outside_air_flow_sensor  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :outside ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :flow ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "AHU Outside Air Flow Sensor"@en.
+
+:ahu_outside_air_flow_sp  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :outside ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :flow ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sp ]
+    ) ] ;
+    rdfs:label  "AHU Outside Air Flow Setpoint"@en.
+
+:ahu_outside_air_damper_cmd  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :outside ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :damper ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "AHU Outside Air Damper Command"@en.
+
+:ahu_exhaust_air_fan_cmd  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :exhaust ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fan ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "AHU Exhaust Air Fan Command"@en.
+
+:ahu_exhaust_air_damper_cmd  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :exhaust ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :damper ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "AHU Exhaust Air Damper Command"@en.
+
+:ahu_cool_stage_cmd  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cool ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :stage ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "AHU Cool Stage Command"@en.
+
+:ahu_heat_stage_cmd  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :heat ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :stage ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "AHU Heat Stage Command"@en.
+
+:ahu_humidifier_cmd  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :humidifier ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "AHU Humidifier Command"@en.
+
+:ahu_filter_sensor  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :filter ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "AHU Filter Sensor"@en.
+
+:ahu_freezeStat_sensor  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :freezeStat ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "AHU Freeze Stat Sensor"@en.
+
+:ahu_heatWheel_cmd  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :heatWheel ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "AHU Heat Wheel Command"@en.
+
+:ahu_faceBypass_cmd  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :faceBypass ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "AHU Face Bypass Command"@en.
+
+:ahu_bypass_damper_cmd  rdfs:subClassOf      :ahu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :ahu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :bypass ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :damper ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "AHU Bypass Damper Command"@en.
+
+:chiller_set  rdfs:subClassOf      :HaystackMarkerSet;
+    rdfs:label  "Chiller set"@en.
+
+:chiller_run_cmd  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :run ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "Chiller Run Command"@en.
+
+:chiller_run_sensor  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :run ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Run Sensor"@en.
+
+:chiller_enable_cmd  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :enable ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "Chiller Enable Command"@en.
+
+:chiller_load_cmd  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :load ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "Chiller Load Command"@en.
+
+:chiller_load_sensor  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :load ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Load Sensor"@en.
+
+:chiller_efficiency_sensor  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :efficiency ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Efficiency Sensor"@en.
+
+:chiller_power_sensor  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :power ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Power Sensor"@en.
+
+:chiller_energy_sensor  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :energy ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Energy Sensor"@en.
+
+:chiller_chilled_water_leaving_temp_sensor  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chilled ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :leaving ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Chilled Water Leaving Temp Sensor"@en.
+
+:chiller_chilled_water_leaving_temp_sp  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chilled ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :leaving ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sp ]
+    ) ] ;
+    rdfs:label  "Chiller Chilled Water Leaving Temp Setpoint"@en.
+
+:chiller_chilled_water_leaving_flow_sensor  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chilled ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :leaving ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :flow ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Chilled Water Leaving Flow Sensor"@en.
+
+:chiller_chilled_water_leaving_pressure_sensor  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chilled ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :leaving ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :pressure ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Chilled Water Leaving Pressure Sensor"@en.
+
+:chiller_chilled_water_entering_temp_sensor  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chilled ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :entering ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Chilled Water Entering Temp Sensor"@en.
+
+:chiller_chilled_water_entering_flow_sensor  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chilled ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :entering ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :flow ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Chilled Water Entering Flow Sensor"@en.
+
+:chiller_chilled_water_entering_pressure_sensor  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chilled ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :entering ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :pressure ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Chilled Water Entering Pressure Sensor"@en.
+
+:chiller_chilled_water_delta_temp_sensor  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chilled ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :delta ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Chilled Water Delta Temp Sensor"@en.
+
+:chiller_chilled_water_delta_flow_sensor  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chilled ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :delta ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :flow ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Chilled Water Delta Flow Sensor"@en.
+
+:chiller_chilled_water_delta_pressure_sensor  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chilled ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :delta ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :pressure ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Chilled Water Delta Pressure Sensor"@en.
+
+:chiller_chilled_water_valve_isolation_cmd  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chilled ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :valve ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :isolation ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "Chiller Chilled Water Valve Isolation Command"@en.
+
+:chiller_condenser_water_leaving_temp_sensor  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :condenser ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :leaving ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Condenser Water Leaving Temp Sensor"@en.
+
+:chiller_condenser_water_leaving_flow_sensor  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :condenser ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :leaving ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :flow ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Condenser Water Leaving Flow Sensor"@en.
+
+:chiller_condenser_water_leaving_pressure_sensor  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :condenser ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :leaving ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :pressure ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Condenser Water Leaving Pressure Sensor"@en.
+
+:chiller_condenser_water_entering_temp_sensor  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :condenser ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :entering ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Condenser Water Entering Temp Sensor"@en.
+
+:chiller_condenser_water_entering_pressure_sensor  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :condenser ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :entering ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :pressure ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Condenser Water Entering Pressure Sensor"@en.
+
+:chiller_condenser_water_entering_flow_sensor  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :condenser ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :entering ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :flow ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Condenser Water Entering Flow Sensor"@en.
+
+:chiller_condenser_water_valve_isolation_cmd  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :condenser ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :valve ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :isolation ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "Chiller Condenser Water Valve Isolation Command"@en.
+
+:chiller_condenser_cmd  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :condenser ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "Chiller Condenser Command"@en.
+
+:chiller_condenser_refrig_temp_sensor  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :condenser ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :refrig ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Condenser Refrig Temp Sensor"@en.
+
+:chiller_condenser_refrig_pressure_sensor  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :condenser ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :refrig ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :pressure ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Condenser Refrig Pressure Sensor"@en.
+
+:chiller_evaporator_refrig_temp_sensor  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :evaporator ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :refrig ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Evaporator Refrig Temp Sensor"@en.
+
+:chiller_evaporator_refrig_pressure_sensor  rdfs:subClassOf      :chiller_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chiller ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :evaporator ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :refrig ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :pressure ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Evaporator Refrig Pressure Sensor"@en.
+
+:chillerPlant_set  rdfs:subClassOf      :HaystackMarkerSet;
+    rdfs:label  "Chiller Plant set"@en.
+
+:chillerPlant_chilled_water_leaving_temp_sensor  rdfs:subClassOf      :chillerPlant_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chillerPlant ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chilled ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :leaving ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Plant Chilled Water Leaving Temp Sensor"@en.
+
+:chillerPlant_chilled_water_leaving_temp_sp  rdfs:subClassOf      :chillerPlant_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chillerPlant ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chilled ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :leaving ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sp ]
+    ) ] ;
+    rdfs:label  "Chiller Plant Chilled Water Leaving Temp Setpoint"@en.
+
+:chillerPlant_chilled_water_leaving_flow_sensor  rdfs:subClassOf      :chillerPlant_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chillerPlant ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chilled ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :leaving ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :flow ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Plant Chilled Water Leaving Flow Sensor"@en.
+
+:chillerPlant_chilled_water_leaving_pressure_sensor  rdfs:subClassOf      :chillerPlant_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chillerPlant ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chilled ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :leaving ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :pressure ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Plant Chilled Water Leaving Pressure Sensor"@en.
+
+:chillerPlant_chilled_water_entering_temp_sensor  rdfs:subClassOf      :chillerPlant_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chillerPlant ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chilled ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :entering ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Plant Chilled Water Entering Temp Sensor"@en.
+
+:chillerPlant_chilled_water_entering_flow_sensor  rdfs:subClassOf      :chillerPlant_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chillerPlant ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chilled ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :entering ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :flow ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Plant Chilled Water Entering Flow Sensor"@en.
+
+:chillerPlant_chilled_water_entering_pressure_sensor  rdfs:subClassOf      :chillerPlant_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chillerPlant ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chilled ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :entering ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :pressure ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Plant Chilled Water Entering Pressure Sensor"@en.
+
+:chillerPlant_chilled_water_delta_temp_sensor  rdfs:subClassOf      :chillerPlant_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chillerPlant ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chilled ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :delta ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Plant Chilled Water Delta Temp Sensor"@en.
+
+:chillerPlant_chilled_water_delta_flow_sensor  rdfs:subClassOf      :chillerPlant_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chillerPlant ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chilled ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :delta ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :flow ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Plant Chilled Water Delta Flow Sensor"@en.
+
+:chillerPlant_chilled_water_delta_pressure_sensor  rdfs:subClassOf      :chillerPlant_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chillerPlant ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chilled ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :delta ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :pressure ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Plant Chilled Water Delta Pressure Sensor"@en.
+
+:chillerPlant_chilled_water_delta_pressure_sp  rdfs:subClassOf      :chillerPlant_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chillerPlant ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chilled ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :delta ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :pressure ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sp ]
+    ) ] ;
+    rdfs:label  "Chiller Plant Chilled Water Delta Pressure Setpoint"@en.
+
+:chillerPlant_chilled_water_bypass_valve_cmd  rdfs:subClassOf      :chillerPlant_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chillerPlant ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chilled ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :bypass ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :valve ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "Chiller Plant Chilled Water Bypass Valve Command"@en.
+
+:chillerPlant_condenser_water_delta_pressure_sensor  rdfs:subClassOf      :chillerPlant_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chillerPlant ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :condenser ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :delta ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :pressure ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Chiller Plant Condenser Water Delta Pressure Sensor"@en.
+
+:chillerPlant_condenser_water_bypass_valve_cmd  rdfs:subClassOf      :chillerPlant_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chillerPlant ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :condenser ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :bypass ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :valve ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "Chiller Plant Condenser Water Bypass Valve Command"@en.
+
+:coolingTower_set  rdfs:subClassOf      :HaystackMarkerSet;
+    rdfs:label  "Cooling Tower set"@en.
+
+:coolingTower_condenser_water_leaving_temp_sensor  rdfs:subClassOf      :coolingTower_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :coolingTower ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :condenser ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :leaving ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Cooling Tower Condenser Water Leaving Temp Sensor"@en.
+
+:coolingTower_condenser_water_leaving_temp_sp  rdfs:subClassOf      :coolingTower_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :coolingTower ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :condenser ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :leaving ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sp ]
+    ) ] ;
+    rdfs:label  "Cooling Tower Condenser Water Leaving Temp Setpoint"@en.
+
+:coolingTower_condenser_water_leaving_flow_sensor  rdfs:subClassOf      :coolingTower_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :coolingTower ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :condenser ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :leaving ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :flow ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Cooling Tower Condenser Water Leaving Flow Sensor"@en.
+
+:coolingTower_condenser_water_leaving_pressure_sensor  rdfs:subClassOf      :coolingTower_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :coolingTower ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :condenser ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :leaving ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :pressure ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Cooling Tower Condenser Water Leaving Pressure Sensor"@en.
+
+:coolingTower_condenser_water_entering_temp_sensor  rdfs:subClassOf      :coolingTower_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :coolingTower ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :condenser ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :entering ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Cooling Tower Condenser Water Entering Temp Sensor"@en.
+
+:coolingTower_condenser_water_entering_pressure_sensor  rdfs:subClassOf      :coolingTower_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :coolingTower ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :condenser ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :entering ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :pressure ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Cooling Tower Condenser Water Entering Pressure Sensor"@en.
+
+:coolingTower_condenser_water_entering_flow_sensor  rdfs:subClassOf      :coolingTower_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :coolingTower ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :condenser ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :entering ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :flow ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Cooling Tower Condenser Water Entering Flow Sensor"@en.
+
+:coolingTower_fan_cmd  rdfs:subClassOf      :coolingTower_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :coolingTower ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fan ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "Cooling Tower Fan Command"@en.
+
+:coolingTower_fan_sensor  rdfs:subClassOf      :coolingTower_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :coolingTower ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fan ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Cooling Tower Fan Sensor"@en.
+
+:elec_meter_set  rdfs:subClassOf      :HaystackMarkerSet;
+    rdfs:label  "Elec Meter set"@en.
+
+:elec_meter_power_sensor  rdfs:subClassOf      :elec_meter_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :elec ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :meter ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :power ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Elec Meter Power Sensor"@en.
+
+:elec_meter_energy_sensor  rdfs:subClassOf      :elec_meter_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :elec ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :meter ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :energy ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Elec Meter Energy Sensor"@en.
+
+:elec_meter_current_sensor  rdfs:subClassOf      :elec_meter_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :elec ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :meter ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :current ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Elec Meter Current Sensor"@en.
+
+:elec_meter_current_phase_sensor  rdfs:subClassOf      :elec_meter_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :elec ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :meter ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :current ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :phase ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Elec Meter Current Phase Sensor"@en.
+
+:elec_meter_volt_sensor  rdfs:subClassOf      :elec_meter_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :elec ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :meter ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :volt ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Elec Meter Volt Sensor"@en.
+
+:elec_meter_volt_phase_sensor  rdfs:subClassOf      :elec_meter_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :elec ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :meter ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :volt ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :phase ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Elec Meter Volt Phase Sensor"@en.
+
+:elec_meter_pf_sensor  rdfs:subClassOf      :elec_meter_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :elec ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :meter ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :pf ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Elec Meter Power Factor Sensor"@en.
+
+:elec_meter_pf_phase_sensor  rdfs:subClassOf      :elec_meter_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :elec ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :meter ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :pf ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :phase ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Elec Meter Power Factor Phase Sensor"@en.
+
+:elec_meter_freq_sensor  rdfs:subClassOf      :elec_meter_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :elec ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :meter ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :freq ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Elec Meter Freq Sensor"@en.
+
+:heatExchanger_set  rdfs:subClassOf      :HaystackMarkerSet;
+    rdfs:label  "Heat Exchanger set"@en.
+
+:heatExchanger_chilled_water_leaving_temp_sensor  rdfs:subClassOf      :heatExchanger_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :heatExchanger ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chilled ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :leaving ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Heat Exchanger Chilled Water Leaving Temp Sensor"@en.
+
+:heatExchanger_chilled_water_entering_temp_sensor  rdfs:subClassOf      :heatExchanger_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :heatExchanger ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chilled ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :entering ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Heat Exchanger Chilled Water Entering Temp Sensor"@en.
+
+:heatExchanger_condenser_water_leaving_temp_sensor  rdfs:subClassOf      :heatExchanger_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :heatExchanger ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :condenser ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :leaving ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Heat Exchanger Condenser Water Leaving Temp Sensor"@en.
+
+:heatExchanger_condenser_water_entering_flow_sensor  rdfs:subClassOf      :heatExchanger_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :heatExchanger ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :condenser ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :entering ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :flow ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Heat Exchanger Condenser Water Entering Flow Sensor"@en.
+
+:vav_set  rdfs:subClassOf      :HaystackMarkerSet;
+    rdfs:label  "VAV set"@en.
+
+:vav_zone_air_temp_sensor  rdfs:subClassOf      :vav_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :vav ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :zone ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "VAV Zone Air Temp Sensor"@en.
+
+:vav_zone_air_temp_effective_sp  rdfs:subClassOf      :vav_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :vav ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :zone ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :effective ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sp ]
+    ) ] ;
+    rdfs:label  "VAV Zone Air Temp Effective Setpoint"@en.
+
+:vav_zone_air_temp_cooling_sp  rdfs:subClassOf      :vav_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :vav ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :zone ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cooling ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sp ]
+    ) ] ;
+    rdfs:label  "VAV Zone Air Temp Cooling Setpoint"@en.
+
+:vav_zone_air_temp_heating_sp  rdfs:subClassOf      :vav_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :vav ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :zone ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :heating ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sp ]
+    ) ] ;
+    rdfs:label  "VAV Zone Air Temp Heating Setpoint"@en.
+
+:vav_zone_air_humidity_sensor  rdfs:subClassOf      :vav_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :vav ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :zone ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :humidity ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "VAV Zone Air Humidity Sensor"@en.
+
+:vav_zone_air_co2_sensor  rdfs:subClassOf      :vav_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :vav ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :zone ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :co2 ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "VAV Zone Air CO2 Sensor"@en.
+
+:vav_discharge_air_temp_sensor  rdfs:subClassOf      :vav_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :vav ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :discharge ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "VAV Discharge Air Temp Sensor"@en.
+
+:vav_discharge_air_pressure_sensor  rdfs:subClassOf      :vav_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :vav ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :discharge ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :pressure ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "VAV Discharge Air Pressure Sensor"@en.
+
+:vav_discharge_air_flow_sensor  rdfs:subClassOf      :vav_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :vav ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :discharge ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :flow ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "VAV Discharge Air Flow Sensor"@en.
+
+:vav_discharge_air_fan_cmd  rdfs:subClassOf      :vav_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :vav ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :discharge ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fan ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "VAV Discharge Air Fan Command"@en.
+
+:vav_discharge_air_fan_sensor  rdfs:subClassOf      :vav_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :vav ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :discharge ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fan ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "VAV Discharge Air Fan Sensor"@en.
+
+:vav_discharge_air_damper_cmd  rdfs:subClassOf      :vav_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :vav ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :discharge ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :damper ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "VAV Discharge Air Damper Command"@en.
+
+:vav_entering_air_temp_sensor  rdfs:subClassOf      :vav_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :vav ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :entering ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "VAV Entering Air Temp Sensor"@en.
+
+:vav_heat_cmd  rdfs:subClassOf      :vav_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :vav ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :heat ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "VAV Heat Command"@en.
+
+:vav_perimeterHeat_cmd  rdfs:subClassOf      :vav_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :vav ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :perimeterHeat ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "VAV Perimeter Heat Command"@en.
+
+:vfd_set  rdfs:subClassOf      :HaystackMarkerSet;
+    rdfs:label  "VFD set"@en.
+
+:vfd_run_cmd  rdfs:subClassOf      :vfd_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :vfd ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :run ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "VFD Run Command"@en.
+
+:vfd_run_sensor  rdfs:subClassOf      :vfd_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :vfd ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :run ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "VFD Run Sensor"@en.
+
+:vfd_enable_cmd  rdfs:subClassOf      :vfd_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :vfd ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :enable ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "VFD Enable Command"@en.
+
+:vfd_speed_cmd  rdfs:subClassOf      :vfd_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :vfd ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :speed ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "VFD Speed Command"@en.
+
+:vfd_freq_cmd  rdfs:subClassOf      :vfd_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :vfd ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :freq ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "VFD Freq Command"@en.
+
+:vfd_power_sensor  rdfs:subClassOf      :vfd_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :vfd ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :power ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "VFD Power Sensor"@en.
+
+:vfd_energy_sensor  rdfs:subClassOf      :vfd_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :vfd ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :energy ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "VFD Energy Sensor"@en.
+
+:vfd_current_sensor  rdfs:subClassOf      :vfd_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :vfd ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :current ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "VFD Current Sensor"@en.
+
+:vfd_current_phase_sensor  rdfs:subClassOf      :vfd_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :vfd ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :current ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :phase ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "VFD Current Phase Sensor"@en.
+
+:vfd_volt_sensor  rdfs:subClassOf      :vfd_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :vfd ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :volt ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "VFD Volt Sensor"@en.
+
+:vfd_volt_phase_sensor  rdfs:subClassOf      :vfd_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :vfd ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :volt ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :phase ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "VFD Volt Phase Sensor"@en.
+
+:vfd_pf_sensor  rdfs:subClassOf      :vfd_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :vfd ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :pf ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "VFD Power Factor Sensor"@en.
+
+:vfd_pf_phase_sensor  rdfs:subClassOf      :vfd_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :vfd ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :pf ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :phase ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "VFD Power Factor Phase Sensor"@en.
+
+:vfd_freq_sensor  rdfs:subClassOf      :vfd_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :vfd ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :freq ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "VFD Freq Sensor"@en.
+
+:pump_set  rdfs:subClassOf      :HaystackMarkerSet;
+    rdfs:label  "Pump set"@en.
+
+:pump_run_cmd  rdfs:subClassOf      :pump_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :pump ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :run ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "Pump Run Command"@en.
+
+:pump_run_sensor  rdfs:subClassOf      :pump_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :pump ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :run ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "Pump Run Sensor"@en.
+
+:meter_set  rdfs:subClassOf      :HaystackMarkerSet;
+    rdfs:label  "Meter set"@en.
+
+:elec_meter  rdfs:subClassOf      :meter_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :elec ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :meter ]
+    ) ] ;
+    rdfs:label  "Elec Meter"@en.
+
+:gas_meter  rdfs:subClassOf      :meter_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :gas ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :meter ]
+    ) ] ;
+    rdfs:label  "Gas Meter"@en.
+
+:domestic_water_meter  rdfs:subClassOf      :meter_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :domestic ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :meter ]
+    ) ] ;
+    rdfs:label  "Domestic Water Meter"@en.
+
+:chilled_water_meter  rdfs:subClassOf      :meter_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :chilled ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :meter ]
+    ) ] ;
+    rdfs:label  "Chilled Water Meter"@en.
+
+:condenser_water_meter  rdfs:subClassOf      :meter_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :condenser ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :meter ]
+    ) ] ;
+    rdfs:label  "Condenser Water Meter"@en.
+
+:hot_water_meter  rdfs:subClassOf      :meter_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :hot ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :meter ]
+    ) ] ;
+    rdfs:label  "Hot Water Meter"@en.
+
+:makeup_water_meter  rdfs:subClassOf      :meter_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :makeup ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :meter ]
+    ) ] ;
+    rdfs:label  "Makeup Water Meter"@en.
+
+:blowdown_water_meter  rdfs:subClassOf      :meter_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :blowdown ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :meter ]
+    ) ] ;
+    rdfs:label  "Blowdown Water Meter"@en.
+
+:condensate_water_meter  rdfs:subClassOf      :meter_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :condensate ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :water ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :meter ]
+    ) ] ;
+    rdfs:label  "Condensate Water Meter"@en.
+
+:steam_meter  rdfs:subClassOf      :meter_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :steam ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :meter ]
+    ) ] ;
+    rdfs:label  "Steam Meter"@en.
+
+:weatherPoint_set  rdfs:subClassOf      :HaystackMarkerSet;
+    rdfs:label  "Weather Point set"@en.
+
+:weatherPoint_temp  rdfs:subClassOf      :weatherPoint_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :weatherPoint ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+    ) ] ;
+    rdfs:label  "Weather Point Temp"@en.
+
+:weatherPoint_humidity  rdfs:subClassOf      :weatherPoint_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :weatherPoint ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :humidity ]
+    ) ] ;
+    rdfs:label  "Weather Point Humidity"@en.
+
+:weatherPoint_weatherCond  rdfs:subClassOf      :weatherPoint_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :weatherPoint ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :weatherCond ]
+    ) ] ;
+    rdfs:label  "Weather Point Weather Cond"@en.
+
+:weatherPoint_air_temp  rdfs:subClassOf      :weatherPoint_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :weatherPoint ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+    ) ] ;
+    rdfs:label  "Weather Point Air Temp"@en.
+
+:weatherPoint_wetBulb  rdfs:subClassOf      :weatherPoint_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :weatherPoint ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :wetBulb ]
+    ) ] ;
+    rdfs:label  "Weather Point Wet Bulb"@en.
+
+:weatherPoint_sunrise  rdfs:subClassOf      :weatherPoint_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :weatherPoint ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sunrise ]
+    ) ] ;
+    rdfs:label  "Weather Point Sunrise"@en.
+
+:outside_set  rdfs:subClassOf      :HaystackMarkerSet;
+    rdfs:label  "Outside set"@en.
+
+:outside_temp  rdfs:subClassOf      :outside_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :outside ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+    ) ] ;
+    rdfs:label  "Outside Temp"@en.
+
+:outside_humidity  rdfs:subClassOf      :outside_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :outside ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :humidity ]
+    ) ] ;
+    rdfs:label  "Outside Humidity"@en.
+
+:outside_weatherCond  rdfs:subClassOf      :outside_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :outside ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :weatherCond ]
+    ) ] ;
+    rdfs:label  "Outside Weather Cond"@en.
+
+:outside_air_temp  rdfs:subClassOf      :outside_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :outside ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+    ) ] ;
+    rdfs:label  "Outside Air Temp"@en.
+
+:outside_wetBulb  rdfs:subClassOf      :outside_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :outside ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :wetBulb ]
+    ) ] ;
+    rdfs:label  "Outside Wet Bulb"@en.
+
+:outside_sunrise  rdfs:subClassOf      :outside_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :outside ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sunrise ]
+    ) ] ;
+    rdfs:label  "Outside Sunrise"@en.
+
+:fcu_set  rdfs:subClassOf      :HaystackMarkerSet;
+    rdfs:label  "FCU set"@en.
+
+:fcu_discharge_air_temp_sensor  rdfs:subClassOf      :fcu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fcu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :discharge ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "FCU Discharge Air Temp Sensor"@en.
+
+:fcu_discharge_air_humidity_sensor  rdfs:subClassOf      :fcu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fcu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :discharge ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :humidity ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "FCU Discharge Air Humidity Sensor"@en.
+
+:fcu_discharge_air_pressure_sensor  rdfs:subClassOf      :fcu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fcu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :discharge ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :pressure ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "FCU Discharge Air Pressure Sensor"@en.
+
+:fcu_discharge_air_flow_sensor  rdfs:subClassOf      :fcu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fcu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :discharge ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :flow ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "FCU Discharge Air Flow Sensor"@en.
+
+:fcu_discharge_air_fan_cmd  rdfs:subClassOf      :fcu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fcu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :discharge ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fan ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "FCU Discharge Air Fan Command"@en.
+
+:fcu_discharge_air_fan_sensor  rdfs:subClassOf      :fcu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fcu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :discharge ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fan ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "FCU Discharge Air Fan Sensor"@en.
+
+:fcu_return_air_temp_sensor  rdfs:subClassOf      :fcu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fcu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :return ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "FCU Return Air Temp Sensor"@en.
+
+:fcu_return_air_humidity_sensor  rdfs:subClassOf      :fcu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fcu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :return ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :humidity ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "FCU Return Air Humidity Sensor"@en.
+
+:fcu_return_air_pressure_sensor  rdfs:subClassOf      :fcu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fcu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :return ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :pressure ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "FCU Return Air Pressure Sensor"@en.
+
+:fcu_return_air_flow_sensor  rdfs:subClassOf      :fcu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fcu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :return ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :flow ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "FCU Return Air Flow Sensor"@en.
+
+:fcu_return_air_co2_sensor  rdfs:subClassOf      :fcu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fcu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :return ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :co2 ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "FCU Return Air CO2 Sensor"@en.
+
+:fcu_return_air_fan_cmd  rdfs:subClassOf      :fcu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fcu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :return ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fan ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "FCU Return Air Fan Command"@en.
+
+:fcu_return_air_damper_cmd  rdfs:subClassOf      :fcu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fcu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :return ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :damper ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cmd ]
+    ) ] ;
+    rdfs:label  "FCU Return Air Damper Command"@en.
+
+:fcu_mixed_air_temp_sensor  rdfs:subClassOf      :fcu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fcu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :mixed ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "FCU Mixed Air Temp Sensor"@en.
+
+:fcu_zone_air_temp_sensor  rdfs:subClassOf      :fcu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fcu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :zone ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "FCU Zone Air Temp Sensor"@en.
+
+:fcu_zone_air_humidity_sensor  rdfs:subClassOf      :fcu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fcu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :zone ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :humidity ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "FCU Zone Air Humidity Sensor"@en.
+
+:fcu_zone_air_co2_sensor  rdfs:subClassOf      :fcu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fcu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :zone ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :co2 ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sensor ]
+    ) ] ;
+    rdfs:label  "FCU Zone Air CO2 Sensor"@en.
+
+:fcu_zone_air_temp_effective_sp  rdfs:subClassOf      :fcu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fcu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :zone ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :effective ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sp ]
+    ) ] ;
+    rdfs:label  "FCU Zone Air Temp Effective Setpoint"@en.
+
+:fcu_zone_air_temp_cooling_sp  rdfs:subClassOf      :fcu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fcu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :zone ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :cooling ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sp ]
+    ) ] ;
+    rdfs:label  "FCU Zone Air Temp Cooling Setpoint"@en.
+
+:fcu_zone_air_temp_heating_sp  rdfs:subClassOf      :fcu_set; 
+    owl:equivalentClass [ rdf:type owl:Class ; owl:intersectionOf ( 
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :fcu ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :zone ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :air ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :temp ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :heating ]
+        [ rdf:type owl:Restriction; owl:onProperty :hasMarker; owl:someValuesFrom :sp ]
+    ) ] ;
+    rdfs:label  "FCU Zone Air Temp Heating Setpoint"@en.
+
