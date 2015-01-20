@@ -1,0 +1,1586 @@
+SODA4R731__ASO ,  vav zone temp sp
+SODA2S14___SMK ,  fan
+SODA1S11___MAT ,  fan mixed air temp
+SODA3R723__ASO ,  vav zone temp sp
+SODA3R327__AGN ,  vav zone
+SODH1P02___FLT , hot water pump sensor
+SODA3R798__ART ,  vav zone temp
+SODA1R405B_ARS ,  vav zone temp sp
+SODA3R683_RVAV ,  vav zone discharge air pressure sensor
+SODA1R405B_ART ,  vav zone temp
+SODA3R311__AGN ,  vav zone
+SODH1______L_L , hot water sensor
+SODC1SP03__FLT , chilled condenser water pump sensor
+SODA4R645_RVAV ,  vav zone discharge air pressure sensor
+SODA1R288__AGN ,  vav zone
+SODA3R419__AGN ,  vav zone
+SODA3C611__ASO ,  vav zone temp sp
+SODA1R562A_ASO ,  vav zone temp sp
+SODA4S1832_STA ,  fan
+SODA1R534__ARS ,  vav zone temp sp
+SODA1R534__ART ,  vav zone temp
+SODA_CH1_CHWRT , chiller chilled water return temp
+SODA3R465_4ARS ,  vav zone temp sp
+SODA2____EVENT ,  sensor
+SODA3R329__ARS ,  vav zone temp sp
+SODA3R465_4ART ,  vav zone temp
+SODA4R367__ASO ,  vav zone temp sp
+SODA1R465_6VP2 ,  vav zone discharge air pressure sensor
+SODA1R465_6VP1 ,  vav zone discharge air pressure sensor
+SODA3R579__ART ,  vav zone temp
+SODA1R516__VAV ,  vav zone discharge air pressure sensor
+SODA4R365__ASO ,  vav zone temp sp
+SODA3R579__ARS ,  vav zone temp sp
+SODA3R719__AGN ,  vav zone
+SODA1R416__ASO ,  vav zone temp sp
+SODA3R798__ARS ,  vav zone temp sp
+SODA1R330A_AGN ,  vav zone
+SODA1R184__AGN ,  vav zone
+SODA1R438__AGN ,  vav zone
+SODA4R573__ARS ,  vav zone temp sp
+SODA3E17___S_S ,  exhaust fan sensor
+SODA4R573__ART ,  vav zone temp
+SODA1R652__VAV ,  vav zone discharge air pressure sensor
+SODA1R288__TMR ,  vav zone
+SODC1C2____TMR , chilled condenser water chiller
+SODCP1_____ALM , condenser pump
+SODC1S_____RWT , chilled condenser water return temp
+SODA1S11___SAS ,  fan air temp sp
+SODA1S11___SAT ,  fan air temp
+SODA4S18___CVP ,  fan chilled water valve pressure
+SODC1S_____TON , chilled condenser water cooling
+SODA4R543__ASO ,  vav zone temp sp
+SODA2__LOW_RAT ,  return air temp
+SODA1R784__AGN ,  vav zone
+SODC1SP04__FLT , chilled condenser water pump sensor
+SODA4R779__ART ,  vav zone temp
+SODA4R779__ARS ,  vav zone temp sp
+SODA3R331_RVAV ,  vav zone discharge air pressure sensor
+SODA1R678__ASO ,  vav zone temp sp
+SODA4R465C_ASO ,  vav zone temp sp
+SODC1SP04__STA , chilled condenser water pump sensor
+SODA2S14___FLT ,  fan sensor
+SODA1R430__ARS ,  vav zone temp sp
+SODC1P_2ND_S_S , chilled condenser water pump sensor
+SODA1R430__ART ,  vav zone temp
+SODA3R385_RVAV ,  vav zone discharge air pressure sensor
+SODA4R635__ASO ,  vav zone temp sp
+SODA3C511__ART ,  vav zone temp
+SODA4E19DP_STA ,  exhaust fan pressure sensor
+SODA3R629_RVAV ,  vav zone discharge air pressure sensor
+SODA1R566__AGN ,  vav zone
+SODA3____CURTL , 
+SODC3P10___FLT , chilled condenser water pump sensor
+SODC1C2P06_S_S , chilled condenser water chiller pump sensor
+SODA1R316__VAV ,  vav zone discharge air pressure sensor
+SODC1S_____DPR , chilled condenser water pressure
+SODC1S_____DPS , chilled condenser water pressure sp
+SODA1ALL_33ARS ,  zone temp sp
+SODA4R535__ARS ,  vav zone temp sp
+SODA4R535__ART ,  vav zone temp
+SODA1C300B_VAV ,  vav zone discharge air pressure sensor
+SODA1R376A_ASO ,  vav zone temp sp
+SODA1R582__ASO ,  vav zone temp sp
+SODA4R543__ARS ,  vav zone temp sp
+SODA1R277__ART ,  vav zone temp
+SODA1R271__ASO ,  vav zone temp sp
+SOD34BLD_RESET , sensor
+SODA1R277__ARS ,  vav zone temp sp
+SODA3R385__AGN ,  vav zone
+SODA1R280__VAV ,  vav zone discharge air pressure sensor
+SODA4R349__AGN ,  vav zone
+SODA1R684__VAV ,  vav zone discharge air pressure sensor
+SODA3R721_RVAV ,  vav zone discharge air pressure sensor
+SODS03AR179ART , fan vav zone temp
+SODS03AR179ARS , fan vav zone temp sp
+SODA4R533_RVAV ,  vav zone discharge air pressure sensor
+SODA3R687__ART ,  vav zone temp
+SODA1S11_I__VR ,  fan
+SODA3R687__ARS ,  vav zone temp sp
+SOD31MAX_X_CVP , chilled water valve pressure
+SOD__BLD_HPSTM , sensor
+SODA1R420__ASO ,  vav zone temp sp
+SODC3A33___STA , chilled condenser water air sensor
+SODA3C711__ARS ,  vav zone temp sp
+SODA4R671__ASO ,  vav zone temp sp
+SODA3C711__ART ,  vav zone temp
+SODA4S18____VR ,  fan
+SODA1S11___CFM ,  fan air
+SODA1R444__AGN ,  vav zone
+SODA4R337_RVAV ,  vav zone discharge air pressure sensor
+SODA3R323__ART ,  vav zone temp
+SODA3R323__ARS ,  vav zone temp sp
+SODA4R349_RVAV ,  vav zone discharge air pressure sensor
+SODA3R625__AGN ,  vav zone
+SODC1C2____VLV , chilled condenser water chiller valve
+SODA1R465_6AGN ,  vav zone
+SODA1R442__ARS ,  vav zone temp sp
+SODA1R465B_AGN ,  vav zone
+SODA1R434__AGN ,  vav zone
+SODA4R365__ART ,  vav zone temp
+SODA4R447__ASO ,  vav zone temp sp
+SODA4R365__ARS ,  vav zone temp sp
+SODA1R410A_AGN ,  vav zone
+SODA4R341__AGN ,  vav zone
+SODA1R542__AGN ,  vav zone
+SODA3R723__ARS ,  vav zone temp sp
+SOD31BLD_2_VAR , sensor
+SODA3R723__ART ,  vav zone temp
+SODA4R465_3ASO ,  vav zone temp sp
+SODA4R441__AGN ,  vav zone
+SODA3S1632_STA ,  fan
+SODA4R731__ARS ,  vav zone temp sp
+SODH1X_____RWT , hot water return temp
+SODA3R695__AGN ,  vav zone
+SODA4R731__ART ,  vav zone temp
+SODA3R583__AGN ,  vav zone
+SODE01B____S_S , exhaust fan sensor
+SODA3R685__AGN ,  vav zone
+SODA3R621_RVAV ,  vav zone discharge air pressure sensor
+SOD34BLD_2_VAR , sensor
+SODA3R465_7VP2 ,  vav zone discharge air pressure sensor
+SODA3R465_7VP1 ,  vav zone discharge air pressure sensor
+SODC3A40___STA , chilled condenser water air sensor
+SODC2______L_L , chilled condenser water sensor
+SODA1R442__ASO ,  vav zone temp sp
+SODA1R438__ARS ,  vav zone temp sp
+SODA4R675__ARS ,  vav zone temp sp
+SODA4R675__ART ,  vav zone temp
+SODA1R438__ART ,  vav zone temp
+SODA1R498__ART ,  vav zone temp
+SODA3R725_RVAV ,  vav zone discharge air pressure sensor
+SODA1R498__ARS ,  vav zone temp sp
+SODA1R430__ASO ,  vav zone temp sp
+SODA1R284__ASO ,  vav zone temp sp
+SODA3C711_RVAV ,  vav zone discharge air pressure sensor
+SODA4R465C_ART ,  vav zone temp
+SODA4R465C_ARS ,  vav zone temp sp
+SOD32NET___STA , sensor
+SODA3E17DP_STA ,  exhaust fan pressure sensor
+SODC3A38___ALM , chilled condenser water air
+SODC1SP04_FAIL , chilled condenser water pump
+SODC3P09DP_STA , chilled condenser water pump pressure sensor
+SODA3R329__ART ,  vav zone temp
+SODA3R579__ASO ,  vav zone temp sp
+SODA4R345__ART ,  vav zone temp
+SODA3R785_N_TM ,  vav zone sensor
+SODA4R345__ARS ,  vav zone temp sp
+SODA3R798__VAV ,  vav zone discharge air pressure sensor
+SODA4R567__ARS ,  vav zone temp sp
+SODA4R567__ART ,  vav zone temp
+SODA3R795__AGN ,  vav zone
+SODA3R517_RVAV ,  vav zone discharge air pressure sensor
+SODA4R775__AGN ,  vav zone
+SODA1R352__VAV ,  vav zone discharge air pressure sensor
+SODA1R190A_ASO ,  vav zone temp sp
+SODA1E13_F_CFM ,  exhaust fan air
+SODA1R271__ARS ,  vav zone temp sp
+SODA1R271__ART ,  vav zone temp
+SODFC01B___S_S , fcu sensor
+SODA1R376A_ART ,  vav zone temp
+SODA1R376A_ARS ,  vav zone temp sp
+SODA4R551__AGN ,  vav zone
+SODH1P01___SPR , hot water pump fan speed
+SODC1C3_4_CMP3 , chilled condenser water chiller
+SODC1C3_4_CMP1 , chilled condenser water chiller
+SODC1C3_4_CMP4 , chilled condenser water chiller
+SODA1R342__ART ,  vav zone temp
+SODA1R342__ARS ,  vav zone temp sp
+SODA1R320__VAV ,  vav zone discharge air pressure sensor
+SODA4R445__AGN ,  vav zone
+SODA4R465C_RVP ,  vav zone valve
+SODA1R283E_VAV ,  vav zone discharge air pressure sensor
+SODA1R420__ART ,  vav zone temp
+SODA1R277__AGN ,  vav zone
+SODA3R315__AGN ,  vav zone
+SODA1ALL_32ARS ,  zone temp sp
+SODA4R580_RVAV ,  vav zone discharge air pressure sensor
+SODA4S18SASA_M ,  fan air sp
+SODA1R682__ASO ,  vav zone temp sp
+SODA1R784__ASO ,  vav zone temp sp
+SODA1R582__VAV ,  vav zone discharge air pressure sensor
+SODA3R321__ASO ,  vav zone temp sp
+SODA1R784__ART ,  vav zone temp
+SODA1S11____VR ,  fan
+SOD34MAX___CVP , chilled water valve pressure
+SODA3R383__ARS ,  vav zone temp sp
+SODA1F2_VAV_MX ,  discharge air pressure sensor
+SODA3R413__AGN ,  vav zone
+SODA1F2_VAV_MN ,  discharge air pressure sensor
+SODA3R315_RVAV ,  vav zone discharge air pressure sensor
+SOD33BLD_RESET , sensor
+SODA1R280__AGN ,  vav zone
+SODA1R330B_AGN ,  vav zone
+SODA3R323__AGN ,  vav zone
+SOD34BLD_1_VAR , sensor
+SODA4R465_3ART ,  vav zone temp
+SODA4R465_3ARS ,  vav zone temp sp
+SODA5S20___S_S ,  fan sensor
+SODA3R689__AGN ,  vav zone
+SOD31NET___STA , sensor
+SODA1R342__VAV ,  vav zone discharge air pressure sensor
+SODC3P10DP_STA , chilled condenser water pump pressure sensor
+SODA3R698__VAV ,  vav zone discharge air pressure sensor
+SODA1R290__ARS ,  vav zone temp sp
+SODA1R290__ART ,  vav zone temp
+SODA1R444__VAV ,  vav zone discharge air pressure sensor
+SODA4R343__AGN ,  vav zone
+SODA1R434_RVAV ,  vav zone discharge air pressure sensor
+SODA4R445_RVAV ,  vav zone discharge air pressure sensor
+SODA1____OCCPY ,  sensor
+SODA1R514__ASO ,  vav zone temp sp
+SODA3R687__ASO ,  vav zone temp sp
+SODA1S1134_STA ,  fan
+SODA1R340__TMR ,  vav zone
+SODA3R685__ARS ,  vav zone temp sp
+SODA1R190B_ART ,  vav zone temp
+SODA1R190B_ARS ,  vav zone temp sp
+SODA3R685__ART ,  vav zone temp
+SODA1R364__VAV ,  vav zone discharge air pressure sensor
+SODA4R345__ASO ,  vav zone temp sp
+SODA3R517__AGN ,  vav zone
+SODA4S18___CFM ,  fan air
+SODA1C700D_ART ,  vav zone temp
+SODA1R184__ASO ,  vav zone temp sp
+SODA3R623__AGN ,  vav zone
+SODC1P__F_FLOW , chilled condenser water flow sensor
+SODA1R398__ARS ,  vav zone temp sp
+SODA4R447__ARS ,  vav zone temp sp
+SODC2______A_M , chilled condenser water
+SODA4R447__ART ,  vav zone temp
+SODA3R319__ART ,  vav zone temp
+SODA4R741_RVAV ,  vav zone discharge air pressure sensor
+SODA2S14___HVP ,  fan hot water valve
+SODA3R319__ARS ,  vav zone temp sp
+SODA4R445__ASO ,  vav zone temp sp
+SODA1R342__ASO ,  vav zone temp sp
+SODA1R726__VAV ,  vav zone discharge air pressure sensor
+SOD32NET___TMR ,
+SODA1R410B_ART ,  vav zone temp
+SODA1R410B_ARS ,  vav zone temp sp
+SODA1S11_WFSTP ,  fan pressure sensor
+SODC2______SWS , chilled condenser water sp
+SODC2______SWT , chilled condenser water temp
+SODA1R442__ART ,  vav zone temp
+SODC1C2_____KW , chilled condenser water chiller power meter
+SODA1R438__ASO ,  vav zone temp sp
+SODA4R675__ASO ,  vav zone temp sp
+SODA1R320__ARS ,  vav zone temp sp
+SODA1R320__ART ,  vav zone temp
+SODA4R580__AGN ,  vav zone
+SODC2T2____VLV , chilled condenser water coolingTower valve
+SODA3R529__ASO ,  vav zone temp sp
+SODA1R734__ASO ,  vav zone temp sp
+SODA1R380__AGN ,  vav zone
+SODA1E13___S_S ,  exhaust fan sensor
+SODA1R284__ARS ,  vav zone temp sp
+SODA4R531__ASO ,  vav zone temp sp
+SODA1R284__ART ,  vav zone temp
+SODA4R367__AGN ,  vav zone
+SODA1R498__ASO ,  vav zone temp sp
+SODA3R789__ASO ,  vav zone temp sp
+SODA1S11___CVP ,  fan chilled water valve pressure
+SODA3R321__ART ,  vav zone temp
+SODA3R321__ARS ,  vav zone temp sp
+SODH1P01DP_STA , hot water pump pressure sensor
+SODA3R621__ART ,  vav zone temp
+SODA3R621__ARS ,  vav zone temp sp
+SODA4R643__AGN ,  vav zone
+SODA4R333_RVAV ,  vav zone discharge air pressure sensor
+SODA3R795__ART ,  vav zone temp
+SODA1R530__VAV ,  vav zone discharge air pressure sensor
+SODA3R795__ARS ,  vav zone temp sp
+SODA4S16_P__VR ,  fan
+SODA3R411_RVAV ,  vav zone discharge air pressure sensor
+SODA1R606__VAV ,  vav zone discharge air pressure sensor
+SODA4R567__ASO ,  vav zone temp sp
+SODA4R739__ASO ,  vav zone temp sp
+SODA3ALL_32ARS ,  zone temp sp
+SODA1R776__AGN ,  vav zone
+SODA1R420A_TMR ,  vav zone
+SODA1R430__VAV ,  vav zone discharge air pressure sensor
+SODA1R678__VAV ,  vav zone discharge air pressure sensor
+SODA1R190A_ART ,  vav zone temp
+SODS01R183_ARS , fan vav zone temp sp
+SODS01R183_ART , fan vav zone temp
+SODA1R190A_ARS ,  vav zone temp sp
+SODA4R645__ARS ,  vav zone temp sp
+SODC3P10___SPD , chilled condenser water pump fan speed
+SODC1C3_4__SWT , chilled condenser water chiller temp
+SODA1__LOW_RAT ,  return air temp
+SODA1R290__ASO ,  vav zone temp sp
+SODC3P10___SPR , chilled condenser water pump fan speed
+SODA1R420__AGN ,  vav zone
+SODA1S11SASA_M ,  fan air sp
+SODA1R514__ART ,  vav zone temp
+SODA1R514__ARS ,  vav zone temp sp
+SODC3A31___STA , chilled condenser water air sensor
+SODA4R637__ARS ,  vav zone temp sp
+SODA3R385__ASO ,  vav zone temp sp
+SODA4R637__ART ,  vav zone temp
+SODA3R695_RVAV ,  vav zone discharge air pressure sensor
+SODA3R689_RVAV ,  vav zone discharge air pressure sensor
+SODA1R682__ARS ,  vav zone temp sp
+SODA1R682__ART ,  vav zone temp
+SODC3P_____A_M , chilled condenser water pump
+SODA2______S_S ,  sensor
+SODA3R727__ASO ,  vav zone temp sp
+SODA4R379__AGN ,  vav zone
+SODA1F3_VAV_AV ,  discharge air pressure sensor
+SODA3R381__AGN ,  vav zone
+SODA3R319__ASO ,  vav zone temp sp
+SODC1SP____A_M , chilled condenser water pump
+SODA5S20___CVP ,  fan chilled water valve pressure
+SOD31NET___TMR ,
+SODA3R783_RVAV ,  vav zone discharge air pressure sensor
+SODA1R516__ASO ,  vav zone temp sp
+SODA3C611_RVAV ,  vav zone discharge air pressure sensor
+SODA3R781__AGN ,  vav zone
+SODA1R444__ASO ,  vav zone temp sp
+SOD__BLD_1_KWD , sensor power
+SOD__BLD_1_KWH , sensor power meter
+SODA3R513_RVAV ,  vav zone discharge air pressure sensor
+SODA4R665__ASO ,  vav zone temp sp
+SODA_CHWS__ALM ,
+SODA3ALL_33NSB , 
+SODA4R567_RVAV ,  vav zone discharge air pressure sensor
+SODC3L32___STA , chilled condenser water sensor
+SODH1P02___SPR , hot water pump fan speed
+SODA1R734__ARS ,  vav zone temp sp
+SODA1R283E_AGN ,  vav zone
+SODA3R529__ARS ,  vav zone temp sp
+SODA3R529__ART ,  vav zone temp
+SODA3R729_RVAV ,  vav zone discharge air pressure sensor
+SODA4ALL_32ARS ,  zone temp sp
+SODA1R682__VAV ,  vav zone discharge air pressure sensor
+SODC3A33___ALM , chilled condenser water air
+SODA1R352__AGN ,  vav zone
+SODA1R524__ART ,  vav zone temp
+SODA1R524__ARS ,  vav zone temp sp
+SODA4R531__ART ,  vav zone temp
+SODA4C751_RVAV ,  vav zone discharge air pressure sensor
+SODA3R383_RVAV ,  vav zone discharge air pressure sensor
+SODA4R531__ARS ,  vav zone temp sp
+SODA1ALL_31ARS ,  zone temp sp
+SODA1R190B_ASO ,  vav zone temp sp
+SODA3R325__ASO ,  vav zone temp sp
+SODA3R685__ASO ,  vav zone temp sp
+SODA4R339__ASO ,  vav zone temp sp
+SODA1E13DP_STA ,  exhaust fan pressure sensor
+SODA3R313__AGN ,  vav zone
+SODA4E19___S_S ,  exhaust fan sensor
+SODA1C700D_ASO ,  vav zone temp sp
+SODA4R373__AGN ,  vav zone
+SODA4R577_RVAV ,  vav zone discharge air pressure sensor
+SODA1R352__ARS ,  vav zone temp sp
+SODA3R623__ARS ,  vav zone temp sp
+SODA1ALL_31NSB , 
+SODA3R623__ART ,  vav zone temp
+SODA1R500A_VAV ,  vav zone discharge air pressure sensor
+SODC1SP____L_L , chilled condenser water pump sensor
+SODA3R527_RVAV ,  vav zone discharge air pressure sensor
+SODA4R739__ART ,  vav zone temp
+SOD__BLD_PRALM , sensor
+SODA1S11_P__VR ,  fan
+SODA2S14___MAT ,  fan mixed air temp
+SODA2S14___DMP ,  fan mixed air damper
+SODA3R627_RVAV ,  vav zone discharge air pressure sensor
+SODA3C511__ASO ,  vav zone temp sp
+SODC2T1__H_S_S , chilled condenser water coolingTower sensor
+SODA1S11___STP ,  fan pressure sensor
+SODA3S16___STS ,  fan pressure sp
+SODA1R676__VAV ,  vav zone discharge air pressure sensor
+SODC3P09___FLT , chilled condenser water pump sensor
+SODA3R417_RVAV ,  vav zone discharge air pressure sensor
+SODA1R287__ALM ,  vav zone
+SODA1R405A_VAV ,  vav zone discharge air pressure sensor
+SODA4R445__ARS ,  vav zone temp sp
+SOD__BLD_STMON , sensor steam
+SODA4R445__ART ,  vav zone temp
+SODA1R442__AGN ,  vav zone
+SODA3R595_RVAV ,  vav zone discharge air pressure sensor
+SODA1R280__ASO ,  vav zone temp sp
+SODA4R771_RVAV ,  vav zone discharge air pressure sensor
+SODA1C180__AGN ,  vav zone
+SODA3R385__ARS ,  vav zone temp sp
+SODA3R385__ART ,  vav zone temp
+SODA4R637__ASO ,  vav zone temp sp
+SODA4R375__ASO ,  vav zone temp sp
+SODA3R789__AGN ,  vav zone
+SODA3R5831RVAV ,  vav zone discharge air pressure sensor
+SODA4R333__ASO ,  vav zone temp sp
+SODA3R321__AGN ,  vav zone
+SODC3P10__FAIL , chilled condenser water pump
+SODA3R727__ART ,  vav zone temp
+SODA4ALL_33NSB , 
+SODA3R727__ARS ,  vav zone temp sp
+SODA1R187A_ASO ,  vav zone temp sp
+SODA4C300TRVAV ,  vav zone discharge air pressure sensor
+SODA4R337A_AGN ,  vav zone
+SODA1R410B_AGN ,  vav zone
+SODA4R449_RVAV ,  vav zone discharge air pressure sensor
+SODA1C400B_ART ,  vav zone temp
+SODA3R795__ASO ,  vav zone temp sp
+SODA4R665__ARS ,  vav zone temp sp
+SODA3R319_RVAV ,  vav zone discharge air pressure sensor
+SODA4R665__ART ,  vav zone temp
+SODA3R785__ART ,  vav zone temp
+SODA2S14___SAS ,  fan air temp sp
+SODA2S14___SAT ,  fan air temp
+SODA3R785__ARS ,  vav zone temp sp
+SODA1R444__ARS ,  vav zone temp sp
+SODA4R645__ASO ,  vav zone temp sp
+SODA1R444__ART ,  vav zone temp
+SODA4R337__AGN ,  vav zone
+SODA4R681B_ARS ,  vav zone temp sp
+SODA4R681B_ART ,  vav zone temp
+SOD34NET___TMR ,
+SODA4R677__ART ,  vav zone temp
+SODA3____EVENT ,  sensor
+SODA3C411__AGN ,  vav zone
+SODA4R537__AGN ,  vav zone
+SODA1______S_S ,  sensor
+SODA4R731_RVAV ,  vav zone discharge air pressure sensor
+SODA1S11___DMP ,  fan mixed air damper
+SODC3A36___STA , chilled condenser water air sensor
+SODA3R787__ASO ,  vav zone temp sp
+SODA4R449__ASO ,  vav zone temp sp
+SODA3R783__ART ,  vav zone temp
+SODA3R393__ARS ,  vav zone temp sp
+SODA1R364__AGN ,  vav zone
+SODC3P09__FAIL , chilled condenser water pump
+SODA3R393__ART ,  vav zone temp
+SODA3R615_RVAV ,  vav zone discharge air pressure sensor
+SODA2____CURTL , 
+SODA4R533__ASO ,  vav zone temp sp
+SODC1C3___LOAD , chilled condenser water chiller load sensor
+SODA4R339__ARS ,  vav zone temp sp
+SODA3R325__ARS ,  vav zone temp sp
+SODA3R325__ART ,  vav zone temp
+SODA3R623__ASO ,  vav zone temp sp
+SODC1P_____A_M , chilled condenser water pump
+SODA1R552__ASO ,  vav zone temp sp
+SODA3R465K_ART ,  vav zone temp
+SODA3R313_RVAV ,  vav zone discharge air pressure sensor
+SODA4R777__AGN ,  vav zone
+SODA4R771__AGN ,  vav zone
+SODA1R398__VAV ,  vav zone discharge air pressure sensor
+SODA1R510__VAV ,  vav zone discharge air pressure sensor
+SODC1C2____S_S , chilled condenser water chiller sensor
+SODA1R516__ART ,  vav zone temp
+SODA3R523__ASO ,  vav zone temp sp
+SODA1R516__ARS ,  vav zone temp sp
+SODA1R275__VAV ,  vav zone discharge air pressure sensor
+SODA4R752__ART ,  vav zone temp
+SODA_CH2_CHWRT , chiller chilled water return temp
+SODC3A37___STA , chilled condenser water air sensor
+SODA4R752__ARS ,  vav zone temp sp
+SODC1C2____FLT , chilled condenser water chiller sensor
+SODA3_SMK_ALM1 , 
+SODA3_SMK_ALM3 , 
+SODA3_SMK_ALM2 , 
+SODA5R800A_ARS ,  vav zone temp sp
+SODC3A41___ALM , chilled condenser water air
+SODA4R580__ASO ,  vav zone temp sp
+SODA5R800A_ART ,  vav zone temp
+SODA1R734__AGN ,  vav zone
+SODA1R598__ASO ,  vav zone temp sp
+SODA3R721__AGN ,  vav zone
+SODA4R365__AGN ,  vav zone
+SODA4S1831_STA ,  fan
+SODA4R633__ARS ,  vav zone temp sp
+SODC1SP04__SPR , chilled condenser water pump fan speed
+SODS02R181_ARS , fan vav zone temp sp
+SODA4S18___MAT ,  fan mixed air temp
+SODS02R181_ART , fan vav zone temp
+SODC1P_____L_L , chilled condenser water pump sensor
+SODA1R524__ASO ,  vav zone temp sp
+SODC1SP04__SPD , chilled condenser water pump fan speed
+SODA4R465H_ART ,  vav zone temp
+SODA1R726__AGN ,  vav zone
+SODA4R465H_ARS ,  vav zone temp sp
+SODA3R725__ASO ,  vav zone temp sp
+SODA1R376A_VAV ,  vav zone discharge air pressure sensor
+SODA3R311__ART ,  vav zone temp
+SODA3R311__ARS ,  vav zone temp sp
+SOD33NET___STA , sensor
+SODA1R440__ASO ,  vav zone temp sp
+SODA4R531__AGN ,  vav zone
+SODC2T1__L_S_S , chilled condenser water coolingTower sensor
+SODA3R389__ASO ,  vav zone temp sp
+SODA3R5871RVAV ,  vav zone discharge air pressure sensor
+SODA4R347__ARS ,  vav zone temp sp
+SODA4R347__ART ,  vav zone temp
+SODA1R342__AGN ,  vav zone
+SODA4R563__AGN ,  vav zone
+SODA3C511__ARS ,  vav zone temp sp
+SODA1R340__ARS ,  vav zone temp sp
+SODA1R340__ART ,  vav zone temp
+SODA2E15DP_STA ,  exhaust fan pressure sensor
+SODA1C300B_ARS ,  vav zone temp sp
+SODA3R683__ART ,  vav zone temp
+SODE05_____STA , exhaust fan sensor
+SODA4R449__ART ,  vav zone temp
+SOD31BLD_RESET , sensor
+SODA3R311_RVAV ,  vav zone discharge air pressure sensor
+SODA3R415_RVAV ,  vav zone discharge air pressure sensor
+SODA4R449__ARS ,  vav zone temp sp
+SODA3R787__ART ,  vav zone temp
+SODA3R787__ARS ,  vav zone temp sp
+SODA4R543__ART ,  vav zone temp
+SODA3R627__ART ,  vav zone temp
+SODA4R375__ART ,  vav zone temp
+SODA4R375__ARS ,  vav zone temp sp
+SODA3R627__ARS ,  vav zone temp sp
+SODA1R465D_VAV ,  vav zone discharge air pressure sensor
+SODA3R515__ART ,  vav zone temp
+SODA3R515__ARS ,  vav zone temp sp
+SODE04_____STA , exhaust fan sensor
+SODA4R543_RVAV ,  vav zone discharge air pressure sensor
+SODC1_ETC__RWT , chilled condenser water return temp
+SODC1C2____KWH , chilled condenser water chiller power meter
+SODA4R333__ART ,  vav zone temp
+SODA3R465_5RVP ,  vav zone valve
+SODA4R333__ARS ,  vav zone temp sp
+SODC3A34___STA , chilled condenser water air sensor
+SODA3R329__AGN ,  vav zone
+SODA3R595__ART ,  vav zone temp
+SODA3R595__ARS ,  vav zone temp sp
+SODA3R785__AGN ,  vav zone
+SODA3R523__ARS ,  vav zone temp sp
+SODA3R523__ART ,  vav zone temp
+SODA1C300__AGN ,  vav zone
+SODA4R733__ARS ,  vav zone temp sp
+SODA3R727__AGN ,  vav zone
+SODA4R733__ART ,  vav zone temp
+SODA4R645__ART ,  vav zone temp
+SODA3R383__ART ,  vav zone temp
+SODA4R379__ASO ,  vav zone temp sp
+SODA4R677__ASO ,  vav zone temp sp
+SODA1R405A_ARS ,  vav zone temp sp
+SODA1R405A_ART ,  vav zone temp
+SODA3______OAT ,  outside air temp
+SODA3R383__ASO ,  vav zone temp sp
+SODA4R681B_ASO ,  vav zone temp sp
+SODA3R415__ASO ,  vav zone temp sp
+SODA4R633__ASO ,  vav zone temp sp
+SODA1R598__ARS ,  vav zone temp sp
+SODA1ALL_34ARS ,  zone temp sp
+SODA1R564__ARS ,  vav zone temp sp
+SODA1R564__ART ,  vav zone temp
+SODA1C300B_AGN ,  vav zone
+SODA1R598__ART ,  vav zone temp
+SODA4R735_RVAV ,  vav zone discharge air pressure sensor
+SODA1____EVENT ,  sensor
+SODA3R421__AGN ,  vav zone
+SOD31BLD_1_VAR , sensor
+SODA4R633_RVAV ,  vav zone discharge air pressure sensor
+SODS03AR179S_S , fan vav zone sensor
+SODA4R651_RVAV ,  vav zone discharge air pressure sensor
+SODA4R533__ART ,  vav zone temp
+SODA4R533__ARS ,  vav zone temp sp
+SODA2S14____VR ,  fan
+SODA1S11STPALM ,  fan pressure
+SODA3R393__ASO ,  vav zone temp sp
+SODA1R552__ART ,  vav zone temp
+SODA3R465K_ASO ,  vav zone temp sp
+SODA1R405B_VAV ,  vav zone discharge air pressure sensor
+SODA4R443_RVAV ,  vav zone discharge air pressure sensor
+SODA1R552__ARS ,  vav zone temp sp
+SODA4R5511RVAV ,  vav zone discharge air pressure sensor
+SODS02R181_S_S , fan vav zone sensor
+SODA1R784__VAV ,  vav zone discharge air pressure sensor
+SODA3R465K_VAV ,  vav zone discharge air pressure sensor
+SODA3R389__ART ,  vav zone temp
+SODA3R389__ARS ,  vav zone temp sp
+SODA1R384__ARS ,  vav zone temp sp
+SODA1R384__ART ,  vav zone temp
+SODA4337A_RVAV ,  vav discharge air pressure sensor
+SODA3S16____VR ,  fan
+SODA1C500B_ARS ,  vav zone temp sp
+SODA3R783__AGN ,  vav zone
+SODA1R340__ASO ,  vav zone temp sp
+SODA1R530__ASO ,  vav zone temp sp
+SODA1R287__ART ,  vav zone temp
+SODA4R347__ASO ,  vav zone temp sp
+SODA4R639_RVAV ,  vav zone discharge air pressure sensor
+SODA1C500B_ART ,  vav zone temp
+SODA4R373__ASO ,  vav zone temp sp
+SODA_CH2_CHWST , chiller chilled water temp
+SODA2E15___RAT ,  exhaust fan return air temp
+SODA1C600A_ARS ,  vav zone temp sp
+SODA1C600A_ART ,  vav zone temp
+SODA1R287__ARS ,  vav zone temp sp
+SODA4R752__ASO ,  vav zone temp sp
+SODA4S18___STP ,  fan pressure sensor
+SODA4S18___STS ,  fan pressure sp
+SODA3R579_RVAV ,  vav zone discharge air pressure sensor
+SODC3A32___STA , chilled condenser water air sensor
+SODA4R580__ARS ,  vav zone temp sp
+SODA4R580__ART ,  vav zone temp
+SODA1C700B_AGN ,  vav zone
+SODC1C3_4CDSWT , chilled condenser water chiller temp
+SODA3R515__ASO ,  vav zone temp sp
+SODA3C511__AGN ,  vav zone
+SOD__BLD_2_VAR , sensor
+SODA1R734__ART ,  vav zone temp
+SODA1E12_F_CFM ,  exhaust fan air
+SODA3R419__ASO ,  vav zone temp sp
+SODA3R627__ASO ,  vav zone temp sp
+SODA1R420__VAV ,  vav zone discharge air pressure sensor
+SODA1R542__ART ,  vav zone temp
+SODA1R542__ARS ,  vav zone temp sp
+SODA1S11_F_CFM ,  fan air
+SODA4R369_RVAV ,  vav zone discharge air pressure sensor
+SODA3R329_RVAV ,  vav zone discharge air pressure sensor
+SODA3R725__ART ,  vav zone temp
+SODA3R725__ARS ,  vav zone temp sp
+SODA4R465H_ASO ,  vav zone temp sp
+SODA1R440__ART ,  vav zone temp
+SODA1R440__ARS ,  vav zone temp sp
+SODA1E12___CFM ,  exhaust fan air
+SODA3R311__ASO ,  vav zone temp sp
+SODA4S18___S_S ,  fan sensor
+SODA4R333__AGN ,  vav zone
+SODA1R320__ASO ,  vav zone temp sp
+SODA4R379__ARS ,  vav zone temp sp
+SODA1R275__ASO ,  vav zone temp sp
+SODA4R379__ART ,  vav zone temp
+SODA1R514__VAV ,  vav zone discharge air pressure sensor
+SODA4R465_3VP2 ,  vav zone discharge air pressure sensor
+SODA4R465_3VP3 ,  vav zone discharge air pressure sensor
+SODA4R465_3VP1 ,  vav zone discharge air pressure sensor
+SODA1C700C_AGN ,  vav zone
+SODA3R695__ART ,  vav zone temp
+SODA1R275__AGN ,  vav zone
+SODA1R405A_ASO ,  vav zone temp sp
+SODA1R452__ART ,  vav zone temp
+SOD31MAX___CVP , chilled water valve pressure
+SODA1R290__ALM ,  vav zone
+SOD31MAX___CVS ,
+SODA3R785_RVAV ,  vav zone discharge air pressure sensor
+SODA4C751__AGN ,  vav zone
+SODA1R508__ARS ,  vav zone temp sp
+SODA4R563_RVAV ,  vav zone discharge air pressure sensor
+SODA3R629__AGN ,  vav zone
+SODC3P10___AMP , chilled condenser water pump current
+SODA3R327__ASO ,  vav zone temp sp
+SODA1R190A_VAV ,  vav zone discharge air pressure sensor
+SODA3S16___H_C ,  fan damper
+SODA4R375__AGN ,  vav zone
+SODA1R410A_VAV ,  vav zone discharge air pressure sensor
+SODA4____EVENT ,  sensor
+SODA2S14___CVP ,  fan chilled water valve pressure
+SODA4R465E_ASO ,  vav zone temp sp
+SODA4R373_RVAV ,  vav zone discharge air pressure sensor
+SODA4R465C_AGN ,  vav zone
+SODA4R671_RVAV ,  vav zone discharge air pressure sensor
+SODA4S18___H_C ,  fan damper
+SODA3R681A_AGN ,  vav zone
+SODA3R595__ASO ,  vav zone temp sp
+SODA1R187__AGN ,  vav zone
+SODA4S18STPALM ,  fan pressure
+SODA1R562A_ARS ,  vav zone temp sp
+SODA1R562A_ART ,  vav zone temp
+SODC3______S_S , chilled condenser water sensor
+SODA1R676__ART ,  vav zone temp
+SODA3__LOW_RAT ,  return air temp
+SODA1R676__ARS ,  vav zone temp sp
+SODA1R416__AGN ,  vav zone
+SODA1C500A_ASO ,  vav zone temp sp
+SODH1X_____A_M , hot water
+SODA1R552__AGN ,  vav zone
+SODA3S1633_STA ,  fan
+SODA1R287__ASO ,  vav zone temp sp
+SODA1C600A_ASO ,  vav zone temp sp
+SODA1C500B_ASO ,  vav zone temp sp
+SODA1R582__AGN ,  vav zone
+SOD__BLD_2_KWH , sensor power meter
+SODA1C400B_ASO ,  vav zone temp sp
+SODA1R530__ALM ,  vav zone
+SOD__BLD_2_KWD , sensor power
+SODH1P01___AMP , hot water pump current
+SODC3A31___ALM , chilled condenser water air
+SODA2S14SASA_M ,  fan air sp
+SODA3R383__AGN ,  vav zone
+SODA3R529_RVAV ,  vav zone discharge air pressure sensor
+SODA1R288__VAV ,  vav zone discharge air pressure sensor
+SODA1R564__ASO ,  vav zone temp sp
+SODA3S16_I__VR ,  fan
+SODA3R415__ART ,  vav zone temp
+SODA3R415__ARS ,  vav zone temp sp
+SODA4R545_RVAV ,  vav zone discharge air pressure sensor
+SODC3A36___ALM , chilled condenser water air
+SODA4R533__AGN ,  vav zone
+SODA3R719_RVAV ,  vav zone discharge air pressure sensor
+SODA4R447_RVAV ,  vav zone discharge air pressure sensor
+SODH1______S_S , hot water sensor
+SODA1C700B_ART ,  vav zone temp
+SODA1C700B_ARS ,  vav zone temp sp
+SODA2R306__ART ,  vav zone temp
+SODA2R306__ARS ,  vav zone temp sp
+SOD__BLD___ORH , sensor outside humidity
+SODA1C700C_ASO ,  vav zone temp sp
+SODA3R583_RVAV ,  vav zone discharge air pressure sensor
+SODA3R389__AGN ,  vav zone
+SODC2T2__L_S_S , chilled condenser water coolingTower sensor
+SODC1C3P12_STA , chilled condenser water chiller pump sensor
+SODA4R343_RVAV ,  vav zone discharge air pressure sensor
+SODA4____CURTL , 
+SODA4R639__ARS ,  vav zone temp sp
+SODA4R639__ART ,  vav zone temp
+SODA1R190B_VAV ,  vav zone discharge air pressure sensor
+SODA1R384__ASO ,  vav zone temp sp
+SODA3R421__ARS ,  vav zone temp sp
+SODA1R430A_ARS ,  vav zone temp sp
+SODA1R430A_ART ,  vav zone temp
+SODA3R421__ART ,  vav zone temp
+SODA1R530__ART ,  vav zone temp
+SODH1P01___S_S , hot water pump sensor
+SODA1R530__ARS ,  vav zone temp sp
+SODA4S18___SAS ,  fan air temp sp
+SODA4S18___SAT ,  fan air temp
+SODA3R327__ARS ,  vav zone temp sp
+SODA3R327__ART ,  vav zone temp
+SODA1R508__ASO ,  vav zone temp sp
+SODA1R440__AGN ,  vav zone
+SODA3ALL_31NSB , 
+SODA1R187__VAV ,  vav zone discharge air pressure sensor
+SODC1S_____SWT , chilled condenser water temp
+SODA3R695__ASO ,  vav zone temp sp
+SODA3R583__ASO ,  vav zone temp sp
+SODA3R729__AGN ,  vav zone
+SODA4R773__ASO ,  vav zone temp sp
+SODA1R288__ALM ,  vav zone
+SODA1R600A_VAV ,  vav zone discharge air pressure sensor
+SODA4R771__ART ,  vav zone temp
+SODA3R331__ART ,  vav zone temp
+SODA3R331__ARS ,  vav zone temp sp
+SODA4_LOW_RAT2 ,  return air temp
+SODA4_LOW_RAT3 ,  return air temp
+SODC2T1__H_STA , chilled condenser water coolingTower sensor
+SODA3R419__ARS ,  vav zone temp sp
+SODA3R419__ART ,  vav zone temp
+SODA1S11___S_S ,  fan sensor
+SODA4R752__AGN ,  vav zone
+SODA3S16___SAS ,  fan air temp sp
+SODA3S16___SAT ,  fan air temp
+SODE03_____S_S , exhaust fan sensor
+SODC1SP03__SPR , chilled condenser water pump fan speed
+SODA4R737__ASO ,  vav zone temp sp
+SODA3R725__AGN ,  vav zone
+SODA3R595__AGN ,  vav zone
+SODA1C600B_ASO ,  vav zone temp sp
+SODA1R542__ASO ,  vav zone temp sp
+SODA4R739__ARS ,  vav zone temp sp
+SODA2S14_P__VR ,  fan
+SODA4R563__ART ,  vav zone temp
+SODA4R563__ARS ,  vav zone temp sp
+SODA1C400A_ART ,  vav zone temp
+SODE05_____S_S , exhaust fan sensor
+SODA1C400A_ARS ,  vav zone temp sp
+SODA1C500A_ART ,  vav zone temp
+SODA1C500A_ARS ,  vav zone temp sp
+SODA1R582_2VAV ,  vav zone discharge air pressure sensor
+SODFC01A___CVP , fcu chilled water valve pressure
+SODC2T2__L_STA , chilled condenser water coolingTower sensor
+SODA1R684__ASO ,  vav zone temp sp
+SODA1R287__TMR ,  vav zone
+SODA4R377__ASO ,  vav zone temp sp
+SODA1R676__ASO ,  vav zone temp sp
+SODA3R789__ARS ,  vav zone temp sp
+SODFC01A___S_S , fcu sensor
+SODA3R789__ART ,  vav zone temp
+SODC1______S_S , chilled condenser water sensor
+SODA1C700ARVAV ,  vav zone discharge air pressure sensor
+SODC3_______VP , chilled condenser water bypass valve
+SOD33NET___TMR ,
+SODA3R727_RVAV ,  vav zone discharge air pressure sensor
+SODA3R629__ART ,  vav zone temp
+SODA3R629__ARS ,  vav zone temp sp
+SODA4C751__ART ,  vav zone temp
+SODA1R326__ARS ,  vav zone temp sp
+SODA1R326__ART ,  vav zone temp
+SODA4C751__ARS ,  vav zone temp sp
+SODA4R551__ASO ,  vav zone temp sp
+SODA4R739_RVAV ,  vav zone discharge air pressure sensor
+SODH1X_____SWS , hot water sp
+SODH1X_____SWT , hot water temp
+SODA3R798__AGN ,  vav zone
+SODA1R380__ART ,  vav zone temp
+SODA1R380__ARS ,  vav zone temp sp
+SODA4R465E_ART ,  vav zone temp
+SODA4R465E_ARS ,  vav zone temp sp
+SODA1C700A_ASO ,  vav zone temp sp
+SODA1R277__VAV ,  vav zone discharge air pressure sensor
+SODA3R321_RVAV ,  vav zone discharge air pressure sensor
+SODA1S11___HVP ,  fan hot water valve
+SODC2_______VP , chilled condenser water bypass valve
+SODA3____OCCPY ,  sensor
+SODA3R421_RVAV ,  vav zone discharge air pressure sensor
+SODA3R421__ASO ,  vav zone temp sp
+SODA1R430A_ASO ,  vav zone temp sp
+SODA4R639__ASO ,  vav zone temp sp
+SODA3R413__ASO ,  vav zone temp sp
+SODA3S16___SPR ,  fan speed
+SODA1R284__VAV ,  vav zone discharge air pressure sensor
+SODA1S11___H_C ,  fan damper
+SODA3S16___SPD ,  fan speed
+SODA3S16___STP ,  fan pressure sensor
+SODA3R465K_AGN ,  vav zone
+SODA1S11_E_STP ,  fan pressure sensor
+SODA1S11_E_STS ,  fan entering pressure sp
+SODA1S11DP_STA ,  fan pressure sensor
+SODA4R775__ASO ,  vav zone temp sp
+SODA1R190A_AGN ,  vav zone
+SODA3R395_RVAV ,  vav zone discharge air pressure sensor
+SODA3R415__AGN ,  vav zone
+SODA4R633__AGN ,  vav zone
+SODA4R631__ARS ,  vav zone temp sp
+SODA4R631__ART ,  vav zone temp
+SODA1R634__AGN ,  vav zone
+SODA1C400B_ARS ,  vav zone temp sp
+SODC1C2P06_STA , chilled condenser water chiller pump sensor
+SODA1R340__AGN ,  vav zone
+SODA1R420A_ALM ,  vav zone
+SODA1R514__AGN ,  vav zone
+SODA4R737__ART ,  vav zone temp
+SODC1S____FLOW , chilled condenser water flow sensor
+SODA4R737__ARS ,  vav zone temp sp
+SODC3A39___ALM , chilled condenser water air
+SODA4R545__ASO ,  vav zone temp sp
+SODA3______S_S ,  sensor
+SODA1R310__AGN ,  vav zone
+SODA1R316__ASO ,  vav zone temp sp
+SODA1C700CRVAV ,  vav zone discharge air pressure sensor
+SODA1C700B_ASO ,  vav zone temp sp
+SODA4R577__ASO ,  vav zone temp sp
+SODA1R336__AGN ,  vav zone
+SODA3R785_D_TM ,  vav zone sensor
+SODH1______A_M , hot water
+SODA4R752__VAV ,  vav zone discharge air pressure sensor
+SODA3R465_7AGN ,  vav zone
+SODC2T1__L_STA , chilled condenser water coolingTower leaving sensor
+SODA1R534__ASO ,  vav zone temp sp
+SOD__BLD_1_OAT , sensor power outside air temp
+SODA4C751__ASO ,  vav zone temp sp
+SODA3R417__ASO ,  vav zone temp sp
+SODA1R326__ASO ,  vav zone temp sp
+SODA3R629__ASO ,  vav zone temp sp
+SODA1R566__ART ,  vav zone temp
+SODA1R566__ARS ,  vav zone temp sp
+SODA1R252__AGN ,  vav zone
+SODA3R695__ARS ,  vav zone temp sp
+SODA3R583__ARS ,  vav zone temp sp
+SODA3R583__ART ,  vav zone temp
+SOD__BLD_CURTL , sensor
+SODA3R795_RVAV ,  vav zone discharge air pressure sensor
+SODA4R535__AGN ,  vav zone
+SODA3R331__ASO ,  vav zone temp sp
+SODA1F5_VAV_AV ,  discharge air pressure sensor
+SODA4S1833_STA ,  fan
+SODE04_____S_S , exhaust fan sensor
+SODA4R773__ART ,  vav zone temp
+SODA4R773__ARS ,  vav zone temp sp
+SODA3S16_P__VR ,  fan
+SODA4R675__AGN ,  vav zone
+SODA1C700A_ART ,  vav zone temp
+SODA1C700A_ARS ,  vav zone temp sp
+SODA1R405A_AGN ,  vav zone
+SODA1R283E_ART ,  vav zone temp
+SODA3S16SASA_M ,  fan air sp
+SODA1R380__ASO ,  vav zone temp sp
+SODA4R347_RVAV ,  vav zone discharge air pressure sensor
+SODA1R283E_ARS ,  vav zone temp sp
+SODA3C611__AGN ,  vav zone
+SODA4R465H_RVP ,  vav zone valve
+SODA1R187__ASO ,  vav zone temp sp
+SODA1C400A_ASO ,  vav zone temp sp
+SODA4ALL_31NSB , 
+SODA1C600B_AGN ,  vav zone
+SODA3R313__ARS ,  vav zone temp sp
+SODA4R563__ASO ,  vav zone temp sp
+SODA3R313__ART ,  vav zone temp
+SODA4__LOW_RAT ,  return air temp
+SODA3R625__ARS ,  vav zone temp sp
+SODA3R625__ART ,  vav zone temp
+SODA4R377__ART ,  vav zone temp
+SODA4R665_RVAV ,  vav zone discharge air pressure sensor
+SODA1R684__ART ,  vav zone temp
+SODA1R684__ARS ,  vav zone temp sp
+SODA1R508__ART ,  vav zone temp
+SODA4R377__ARS ,  vav zone temp sp
+SODA3R785__ADS ,  vav zone sp
+SODA4R775__ARS ,  vav zone temp sp
+SODA1R438_RVAV ,  vav zone discharge air pressure sensor
+SODA4R775__ART ,  vav zone temp
+SODA3R681ARVAV ,  vav zone discharge air pressure sensor
+SODS01R183_S_S , fan vav zone sensor
+SODA1R776__ASO ,  vav zone temp sp
+SODA1R330A_ASO ,  vav zone temp sp
+SODA1E12___RAT ,  exhaust fan return air temp
+SODA4R631__ASO ,  vav zone temp sp
+SODE02_____S_S , exhaust fan sensor
+SODA1R434__ART ,  vav zone temp
+SODA1R434__ARS ,  vav zone temp sp
+SODA4R731__AGN ,  vav zone
+SODA4R551__ARS ,  vav zone temp sp
+SODA4R551__ART ,  vav zone temp
+SODA3R723__AGN ,  vav zone
+SODA3R625_RVAV ,  vav zone discharge air pressure sensor
+SODA4R465E_AGN ,  vav zone
+SODA3R393_RVAV ,  vav zone discharge air pressure sensor
+SODH1P02___S_S , hot water pump sensor
+SODA1R252__VAV ,  vav zone discharge air pressure sensor
+SODA1S1133_STA ,  fan
+SODC1SP03__AMP , chilled condenser water pump current
+SODA4R577__ART ,  vav zone temp
+SODA4R577__ARS ,  vav zone temp sp
+SODA1R634__ART ,  vav zone temp
+SODH1P02___TMR , hot water pump
+SODA1R316__ARS ,  vav zone temp sp
+SODA4R735__ASO ,  vav zone temp sp
+SODA4C300T_AGN ,  vav zone
+SODC2______S_S , chilled condenser water sensor
+SODA1C400C_ARS ,  vav zone temp sp
+SODA1C400C_ART ,  vav zone temp
+SODA4R567__AGN ,  vav zone
+SODA4ALL_34ARS ,  zone temp sp
+SODA1R384__AGN ,  vav zone
+SODA4R741__AGN ,  vav zone
+SODA4R765_RVAV ,  vav zone discharge air pressure sensor
+SODC1C2P08_STA , chilled condenser water chiller pump sensor
+SODA2____OCCPY ,  sensor
+SODA1R498__VAV ,  vav zone discharge air pressure sensor
+SODA1R287__AGN ,  vav zone
+SODA1C600A_AGN ,  vav zone
+SODA3R413__ARS ,  vav zone temp sp
+SODC3P09___S_S , chilled condenser water pump sensor
+SODA4R733_RVAV ,  vav zone discharge air pressure sensor
+SODA3R413__ART ,  vav zone temp
+SODFC01B___CVP , fcu chilled water valve pressure
+SODA3S16___SMK ,  fan
+SODA1E12DP_STA ,  exhaust fan pressure sensor
+SODA1R530__TMR ,  vav zone
+SOD__BLD_1SKWH , sensor energy meter
+SODA4R635__AGN ,  vav zone
+SODA4S18___SMK ,  fan
+SODA1R336__VAV ,  vav zone discharge air pressure sensor
+SODA3R621__AGN ,  vav zone
+SODA3S16DP_STA ,  fan pressure sensor
+SODH1P02___AMP , hot water pump current
+SODA3R781__ASO ,  vav zone temp sp
+SODA4R339__AGN ,  vav zone
+SODA1R410B_VAV ,  vav zone discharge air pressure sensor
+SODA3R313__ASO ,  vav zone temp sp
+SODA1R330B_ART ,  vav zone temp
+SODA1R330B_ARS ,  vav zone temp sp
+SODA1C700D_AGN ,  vav zone
+SODA3_LOW_RAT1 ,  return air temp
+SODA3_LOW_RAT3 ,  return air temp
+SODA3_LOW_RAT2 ,  return air temp
+SODA4R441_RVAV ,  vav zone discharge air pressure sensor
+SODA1R606__ASO ,  vav zone temp sp
+SODA3R687_RVAV ,  vav zone discharge air pressure sensor
+SODA4R365_RVAV ,  vav zone discharge air pressure sensor
+SODA4R737__AGN ,  vav zone
+SODA3R465_4VP3 ,  vav zone discharge air pressure sensor
+SODA3R465_4VP1 ,  vav zone discharge air pressure sensor
+SODA3R621__ASO ,  vav zone temp sp
+SODA4R673__AGN ,  vav zone
+SODA1R364__ARS ,  vav zone temp sp
+SODA1R566__ASO ,  vav zone temp sp
+SODA4R651__ARS ,  vav zone temp sp
+SODA1R364__ART ,  vav zone temp
+SODA1R508__AGN ,  vav zone
+SODA3R417__ART ,  vav zone temp
+SODA3R417__ARS ,  vav zone temp sp
+SODA1R398__AGN ,  vav zone
+SODA1R516__AGN ,  vav zone
+SODA1R190B_AGN ,  vav zone
+SODA3E17___SPR ,  exhaust fan speed
+SODA3R685_RVAV ,  vav zone discharge air pressure sensor
+SODC3A41___STA , chilled condenser water air sensor
+SODA1R684__AGN ,  vav zone
+SODC1C3P11_STA , chilled condenser water chiller pump sensor
+SODA4R377__AGN ,  vav zone
+SODA1R290__VAV ,  vav zone discharge air pressure sensor
+SODA1F4_VAV_AV ,  discharge air pressure sensor
+SODC3P10___TMR , chilled condenser water pump
+SODA4R465E_RVP ,  vav zone valve
+SODA1R369__AGN ,  vav zone
+SODA1C700A_AGN ,  vav zone
+SODA3R689__ART ,  vav zone temp
+SODA1C180__ASO ,  vav zone temp sp
+SODA3R689__ARS ,  vav zone temp sp
+SODA3R625__ASO ,  vav zone temp sp
+SODA1R316__ART ,  vav zone temp
+SODA1R283E_ASO ,  vav zone temp sp
+SODA4ALL_33ARS ,  zone temp sp
+SODH1P01___TMR , hot water pump
+SODA1C700C_ARS ,  vav zone temp sp
+SODA1R634__ARS ,  vav zone temp sp
+SODA1C700C_ART ,  vav zone temp
+SODA1R442__VAV ,  vav zone discharge air pressure sensor
+SODA1R562A_AGN ,  vav zone
+SODA1R187__ARS ,  vav zone temp sp
+SODA1R510__AGN ,  vav zone
+SODA1R187__ART ,  vav zone temp
+SODC1SP04__S_S , chilled condenser water pump sensor
+SODA1_SLCT_PID , 
+SODA4R545__ART ,  vav zone temp
+SODA4R545__ARS ,  vav zone temp sp
+SODA1F1_VAV_AV ,  discharge air pressure sensor
+SOD__BLD_2SKWH , sensor energy meter
+SODA4S18___DMP ,  fan mixed air damper
+SODA3R517__ARS ,  vav zone temp sp
+SODA3R517__ART ,  vav zone temp
+SODA1E13___SPR ,  exhaust fan speed
+SODA1R776__ARS ,  vav zone temp sp
+SODA1R776__ART ,  vav zone temp
+SODA1R465_6ASO ,  vav zone temp sp
+SODH1P02DP_STA , hot water pump pressure sensor
+SODA4S18___SPR ,  fan speed
+SODS03BR179S_S , fan vav zone sensor
+SODA3E17___CFM ,  exhaust fan air
+SODA1R726__ART ,  vav zone temp
+SODA1R465B_ASO ,  vav zone temp sp
+SODA1R434__ASO ,  vav zone temp sp
+SODA1R726__ARS ,  vav zone temp sp
+SODA1____CURTL , 
+SODA4E19___RAT ,  exhaust fan return air temp
+SODA1R330A_ART ,  vav zone temp
+SODA4S18_I__VR ,  fan
+SODA1R330A_ARS ,  vav zone temp sp
+SODA3R419_RVAV ,  vav zone discharge air pressure sensor
+SODA4R537__ASO ,  vav zone temp sp
+SODH1______DPS , hot water pressure sp
+SODH1______DPR , hot water pressure
+SODA1ALL_32NSB , 
+SOD__BLD___HPS , sensor
+SODC3______DPR , chilled condenser water pressure
+SODC3______DPS , chilled condenser water pressure sp
+SODC3A32___ALM , chilled condenser water air
+SODA3R781__ARS ,  vav zone temp sp
+SODA3R781__ART ,  vav zone temp
+SODA1R316__AGN ,  vav zone
+SODA4R577__AGN ,  vav zone
+SODA4R449__AGN ,  vav zone
+SODA3R381_RVAV ,  vav zone discharge air pressure sensor
+SODA4R339_RVAV ,  vav zone discharge air pressure sensor
+SODC1P_____TON , chilled condenser water cooling
+SODA4R369__ARS ,  vav zone temp sp
+SODA4R735__ART ,  vav zone temp
+SODA4R735__ARS ,  vav zone temp sp
+SODA4R369__ART ,  vav zone temp
+SODA1C400C_ASO ,  vav zone temp sp
+SODC3P09___TMR , chilled condenser water pump
+SODA3R317__ART ,  vav zone temp
+SODA1R634__ASO ,  vav zone temp sp
+SODA3R317__ARS ,  vav zone temp sp
+SODA4R443__ASO ,  vav zone temp sp
+SODC3A34___ALM , chilled condenser water air
+SODA3R587__ASO ,  vav zone temp sp
+SODC3A39___STA , chilled condenser water air sensor
+SODA3R395__ARS ,  vav zone temp sp
+SODA3R395__ART ,  vav zone temp
+SODA1R430A_AGN ,  vav zone
+SODA3R515_RVAV ,  vav zone discharge air pressure sensor
+SODA4R639__AGN ,  vav zone
+SODA4R337A_ASO ,  vav zone temp sp
+SODA4R543__AGN ,  vav zone
+SODC1C4____S_S , chilled condenser water chiller sensor
+SODA1R252__ARS ,  vav zone temp sp
+SODA1R252__ART ,  vav zone temp
+SODA1R280__ARS ,  vav zone temp sp
+SODA4R733__ASO ,  vav zone temp sp
+SODC2__P___VLV , chilled condenser water valve
+SODC1C3_4_CMP2 , chilled condenser water chiller
+SOD34BLD_C_SAS , sensor air temp sp
+SODA3R523_RVAV ,  vav zone discharge air pressure sensor
+SODA4R651__ASO ,  vav zone temp sp
+SODA1R364__ASO ,  vav zone temp sp
+SODA4R341_RVAV ,  vav zone discharge air pressure sensor
+SODA1R336__ASO ,  vav zone temp sp
+SODA4R741__ART ,  vav zone temp
+SODA3R525__ASO ,  vav zone temp sp
+SODA4R741__ARS ,  vav zone temp sp
+SODA3R617__AGN ,  vav zone
+SODA1C700DRVAV ,  vav zone discharge air pressure sensor
+SODC2T2__H_STA , chilled condenser water coolingTower sensor
+SODA4R337__ASO ,  vav zone temp sp
+SODA1R273__AGN ,  vav zone
+SODA1R652__AGN ,  vav zone
+SODA3R465_5AGN ,  vav zone
+SODA1R682__AGN ,  vav zone
+SODA3R721__ASO ,  vav zone temp sp
+SODC2______RWT , chilled condenser water return temp
+SODA3R417__AGN ,  vav zone
+SODA1R326__AGN ,  vav zone
+SODA4______S_S ,  sensor
+SODC1C2P08_S_S , chilled condenser water chiller pump sensor
+SODA1R252__ASO ,  vav zone temp sp
+SODA4R779_RVAV ,  vav zone discharge air pressure sensor
+SODA1R734__VAV ,  vav zone discharge air pressure sensor
+SODC1C2____SWS , chilled condenser water chiller sp
+SODC1C2____SWT , chilled condenser water chiller temp
+SODA1R678__ART ,  vav zone temp
+SODA3E17___RAT ,  exhaust fan return air temp
+SODA1R340__VAV ,  vav zone discharge air pressure sensor
+SODC1_CND_FLOW , chilled condenser water flow
+SODA1R330B_ASO ,  vav zone temp sp
+SOD32BLD_RESET , sensor
+SODA3S1631_STA ,  fan
+SODC2______PID , chilled condenser water
+SODA4R779__ASO ,  vav zone temp sp
+SODA3R323__ASO ,  vav zone temp sp
+SODA1R606__ART ,  vav zone temp
+SODA1R606__ARS ,  vav zone temp sp
+SODA4R677__ARS ,  vav zone temp sp
+SODA4R673__ARS ,  vav zone temp sp
+SODA4R777__ASO ,  vav zone temp sp
+SODA4R673__ART ,  vav zone temp
+SODA3S16STPALM ,  fan pressure
+SODA4R779__AGN ,  vav zone
+SODA1R376A_AGN ,  vav zone
+SODA1R626__AGN ,  vav zone
+SODA1R465_6ART ,  vav zone temp
+SODA1R465_6ARS ,  vav zone temp sp
+SODA3S16___MAT ,  fan mixed air temp
+SODA4R373__ARS ,  vav zone temp sp
+SODA1R290__TMR ,  vav zone
+SODA1R410B_ASO ,  vav zone temp sp
+SODA4R765__AGN ,  vav zone
+SODA4R373__ART ,  vav zone temp
+SODA3ALL_34NSB , 
+SODA1R465B_ART ,  vav zone temp
+SODA1R726__ASO ,  vav zone temp sp
+SODA1R465B_ARS ,  vav zone temp sp
+SODA2S14___S_S ,  fan sensor
+SODA4R681BRVAV ,  vav zone discharge air pressure sensor
+SODA1C180__ARS ,  vav zone temp sp
+SODA3R689__ASO ,  vav zone temp sp
+SODA1R508__VAV ,  vav zone discharge air pressure sensor
+SODA1C180__ART ,  vav zone temp
+SODA4E19___SPR ,  exhaust fan speed
+SODA4R443__ART ,  vav zone temp
+SODA4R443__ARS ,  vav zone temp sp
+SODA1S11___SMK ,  fan
+SODA4R379_RVAV ,  vav zone discharge air pressure sensor
+SODA1R420A_ASO ,  vav zone temp sp
+SODA4C300T_ARS ,  vav zone temp sp
+SODA4C300T_ART ,  vav zone temp
+SOD33BLD_1_VAR , sensor
+SODA3R681A_ART ,  vav zone temp
+SODA4R369__ASO ,  vav zone temp sp
+SODA3R529__AGN ,  vav zone
+SODA1R420A_VAV ,  vav zone discharge air pressure sensor
+SODA4R337A_ARS ,  vav zone temp sp
+SODA3R787__AGN ,  vav zone
+SODA4R337A_ART ,  vav zone temp
+SODA3R587__ART ,  vav zone temp
+SODA3R587__ARS ,  vav zone temp sp
+SODA3R395__ASO ,  vav zone temp sp
+SODA3R317_RVAV ,  vav zone discharge air pressure sensor
+SODC3A35___STA , chilled condenser water air sensor
+SODA1R420__ARS ,  vav zone temp sp
+SODA3ALL_33ARS ,  zone temp sp
+SODA1R524__VAV ,  vav zone discharge air pressure sensor
+SODA1R384__VAV ,  vav zone discharge air pressure sensor
+SODA3R517__ASO ,  vav zone temp sp
+SODA4R345__AGN ,  vav zone
+SODA1R776__VAV ,  vav zone discharge air pressure sensor
+SODA3R615__AGN ,  vav zone
+SODA4R631_RVAV ,  vav zone discharge air pressure sensor
+SODA4R337__ARS ,  vav zone temp sp
+SODA3R787_RVAV ,  vav zone discharge air pressure sensor
+SODA4R337__ART ,  vav zone temp
+SODC1SP03__STA , chilled condenser water pump sensor
+SODA1R582_1VAV ,  vav zone discharge air pressure sensor
+SODA1R187A_AGN ,  vav zone
+SODA3R525__ART ,  vav zone temp
+SODA4R741__ASO ,  vav zone temp sp
+SODA3R525__ARS ,  vav zone temp sp
+SODA3R513__AGN ,  vav zone
+SODA1R336__ARS ,  vav zone temp sp
+SODA1R465D_ASO ,  vav zone temp sp
+SODA1R336__ART ,  vav zone temp
+SODA4R739__AGN ,  vav zone
+SODA4R677__AGN ,  vav zone
+SODH1P01___FLT , hot water pump sensor
+SODA1R340__ALM ,  vav zone
+SODA1R416__VAV ,  vav zone discharge air pressure sensor
+SODA1R498__AGN ,  vav zone
+SODA4R367__ARS ,  vav zone temp sp
+SODA1R544__ART ,  vav zone temp
+SODC1SP04__AMP , chilled condenser water pump current
+SODA1R544__ARS ,  vav zone temp sp
+SODC1C2SYS_S_S , chilled condenser water chiller sensor
+SODA4R537__ARS ,  vav zone temp sp
+SODA4R537__ART ,  vav zone temp
+SODA1E13___CFM ,  exhaust fan air
+SODA4R735__AGN ,  vav zone
+SODA3R527__ASO ,  vav zone temp sp
+SODA1R430__AGN ,  vav zone
+SODC1C3_4__3TM , chilled condenser water chiller
+SODA1C300__ASO ,  vav zone temp sp
+SODA1R652__ART ,  vav zone temp
+SODA1R652__ARS ,  vav zone temp sp
+SODE01A____S_S , exhaust fan sensor
+SODA1R405B_AGN ,  vav zone
+SODA3R325_RVAV ,  vav zone discharge air pressure sensor
+SODA1R280__ART ,  vav zone temp
+SODA1R562A_VAV ,  vav zone discharge air pressure sensor
+SODA4R777__ARS ,  vav zone temp sp
+SODA4R777__ART ,  vav zone temp
+SODA4R673__ASO ,  vav zone temp sp
+SODA2S14___H_C ,  fan damper
+SOD__BLD_1_VAR , sensor
+SODA1F5_VAV_MN ,  discharge air pressure sensor
+SODA1R606__AGN ,  vav zone
+SODA4R341__ARS ,  vav zone temp sp
+SODA4R341__ART ,  vav zone temp
+SODA1R273__VAV ,  vav zone discharge air pressure sensor
+SODA4R675_RVAV ,  vav zone discharge air pressure sensor
+SODA1R534__AGN ,  vav zone
+SODA1F5_VAV_MX ,  discharge air pressure sensor
+SODA2S14DP_STA ,  fan pressure sensor
+SODA3R681A_ARS ,  vav zone temp sp
+SODA4R643__ASO ,  vav zone temp sp
+SODA4R737_RVAV ,  vav zone discharge air pressure sensor
+SODA3R327_RVAV ,  vav zone discharge air pressure sensor
+SODA4_SMK_ALM1 , 
+SODA4_SMK_ALM2 , 
+SODA4_SMK_ALM3 , 
+SODA4____OCCPY ,  sensor
+SODA4R339__ART ,  vav zone temp
+SODA3R719__ARS ,  vav zone temp sp
+SODA3R719__ART ,  vav zone temp
+SODC1SP03_FAIL , chilled condenser water pump
+SODC3A37___ALM , chilled condenser water air
+SODC1S__F_FLOW , chilled condenser water flow sensor
+SODA4R576__ART ,  vav zone temp
+SODA3C411__ARS ,  vav zone temp sp
+SODA3C411__ART ,  vav zone temp
+SODA1R534__VAV ,  vav zone discharge air pressure sensor
+SODA1R544__VAV ,  vav zone discharge air pressure sensor
+SODA4R576__ARS ,  vav zone temp sp
+SODA4S18DP_STA ,  fan pressure sensor
+SODA3S16___FLT ,  fan sensor
+SODC1SP03__S_S , chilled condenser water pump sensor
+SODC1C2__CDRWT , chilled condenser water chiller return temp
+SODA4R665__AGN ,  vav zone
+SODA1R398__ASO ,  vav zone temp sp
+SODA2E15___S_S ,  exhaust fan sensor
+SODA3R413_RVAV ,  vav zone discharge air pressure sensor
+SODA1R184__ART ,  vav zone temp
+SODA1R626__VAV ,  vav zone discharge air pressure sensor
+SODA1R184__ARS ,  vav zone temp sp
+SODA3R721__ARS ,  vav zone temp sp
+SODA3R721__ART ,  vav zone temp
+SODA1R290__AGN ,  vav zone
+SODA1R187A_VAV ,  vav zone discharge air pressure sensor
+SODA5S20DP_STA ,  fan pressure sensor
+SODA3R465_4AGN ,  vav zone
+SODC1P____FLOW , chilled condenser water pump
+SODA3R317__ASO ,  vav zone temp sp
+SODA3R325__AGN ,  vav zone
+SODC2T1____VLV , chilled condenser water coolingTower valve
+SODA1R784__ARS ,  vav zone temp sp
+SODA1R582__ARS ,  vav zone temp sp
+SODA1R430A_VAV ,  vav zone discharge air pressure sensor
+SODA4R576_RVAV ,  vav zone discharge air pressure sensor
+SODA4R345_RVAV ,  vav zone discharge air pressure sensor
+SODA3R615__ARS ,  vav zone temp sp
+SODA3R465K_ARS ,  vav zone temp sp
+SODA1R275__ART ,  vav zone temp
+SODA1R275__ARS ,  vav zone temp sp
+SODA1R510__ASO ,  vav zone temp sp
+SODA3R381__ASO ,  vav zone temp sp
+SODA3R615__ART ,  vav zone temp
+SODA3R783__ASO ,  vav zone temp sp
+SODA3R319__AGN ,  vav zone
+SODA1R530__AGN ,  vav zone
+SODC2______ALM , chilled condenser water
+SOD____MAX_OAT , outside air temp
+SODA3ALL_31ARS ,  zone temp sp
+SODA1R544__ASO ,  vav zone temp sp
+SODA1C300__ARS ,  vav zone temp sp
+SODA1C300__ART ,  vav zone temp
+SODA1R184__VAV ,  vav zone discharge air pressure sensor
+SODA3R527__ART ,  vav zone temp
+SODA3R527__ARS ,  vav zone temp sp
+SODA1C400C_AGN ,  vav zone
+SODA3C711__AGN ,  vav zone
+SODA4R443__AGN ,  vav zone
+SODA3R698__AGN ,  vav zone
+SODA4R651__AGN ,  vav zone
+SODC3__T_C_STA , chilled condenser water sensor
+SODA4R677_RVAV ,  vav zone discharge air pressure sensor
+SODA4R573__AGN ,  vav zone
+SODA1R420A_ARS ,  vav zone temp sp
+SODA3R627__AGN ,  vav zone
+SODA4R765__ARS ,  vav zone temp sp
+SODA1R320__AGN ,  vav zone
+SODA4R765__ART ,  vav zone temp
+SODA1R352__ASO ,  vav zone temp sp
+SODH1______STA , hot water sensor
+SODC1C3_4CDRWT , chilled condenser water chiller return temp
+SODA4ALL_31ARS ,  zone temp sp
+SOD33BLD_2_VAR , sensor
+SODA4ALL_32NSB , 
+SODA3R681A_ASO ,  vav zone temp sp
+SODA4ALL_34NSB , 
+SODA4R551_RVAV ,  vav zone discharge air pressure sensor
+SODC1SEC__TONS , chilled condenser water
+SODA4R341__ASO ,  vav zone temp sp
+SODA3R525__AGN ,  vav zone
+SODA3R513__ART ,  vav zone temp
+SODA1R465D_ART ,  vav zone temp
+SODA1R465D_ARS ,  vav zone temp sp
+SODA3R617__ASO ,  vav zone temp sp
+SODA3R513__ARS ,  vav zone temp sp
+SODA1C400ARVAV ,  vav zone discharge air pressure sensor
+SODA1C500A_AGN ,  vav zone
+SODC3A35___ALM , chilled condenser water air
+SODA4R643__ART ,  vav zone temp
+SODA4R643__ARS ,  vav zone temp sp
+SODC1SP03__TMR , chilled condenser water pump
+SODA1C180__VAV ,  vav zone discharge air pressure sensor
+SODA3R587__AGN ,  vav zone
+SODH1P01__FAIL , hot water pump
+SODA4R631__AGN ,  vav zone
+SODA1R552__VAV ,  vav zone discharge air pressure sensor
+SODA1R310__ASO ,  vav zone temp sp
+SODA4R349__ARS ,  vav zone temp sp
+SODA4R349__ART ,  vav zone temp
+SODA1R288__ASO ,  vav zone temp sp
+SODA1R634__VAV ,  vav zone discharge air pressure sensor
+SODA1R564__AGN ,  vav zone
+SODA4R576__AGN ,  vav zone
+SODA1R410A_ART ,  vav zone temp
+SODA1R410A_ARS ,  vav zone temp sp
+SODA4R775_RVAV ,  vav zone discharge air pressure sensor
+SODA1R600B_VAV ,  vav zone discharge air pressure sensor
+SODA1R398__ART ,  vav zone temp
+SODC3______SWS , chilled condenser water sp
+SODC3______SWT , chilled condenser water temp
+SODC1C3____S_S , chilled condenser water chiller sensor
+SODA1C400BRVAV ,  vav zone discharge air pressure sensor
+SODA3S16___CVP ,  fan chilled water valve pressure
+SODA1R273__ASO ,  vav zone temp sp
+SODA1R652__ASO ,  vav zone temp sp
+SODA4R637__AGN ,  vav zone
+SODA4R777_RVAV ,  vav zone discharge air pressure sensor
+SODA4R377_RVAV ,  vav zone discharge air pressure sensor
+SODA1E12___S_S ,  exhaust fan sensor
+SODA3C411__ASO ,  vav zone temp sp
+SODA3R381__ART ,  vav zone temp
+SODA3R381__ARS ,  vav zone temp sp
+SODA4R771__ASO ,  vav zone temp sp
+SODA1R510__ARS ,  vav zone temp sp
+SODA4R465A_ARS ,  vav zone temp sp
+SODA4R465A_ART ,  vav zone temp
+SODA1R510__ART ,  vav zone temp
+SODA1R465B_VAV ,  vav zone discharge air pressure sensor
+SODC3A38___STA , chilled condenser water air sensor
+SODA3R523__AGN ,  vav zone
+SODA3R465_5ARS ,  vav zone temp sp
+SODA3R465_5ART ,  vav zone temp
+SODCP1____TEMP , chilled condenser water temp sensor
+SODA3R783__ARS ,  vav zone temp sp
+SODC1SEC__FLOW , chilled condenser water flow sensor
+SODA4R367_RVAV ,  vav zone discharge air pressure sensor
+SODA3R683__ASO ,  vav zone temp sp
+SODC3A40___ALM , chilled condenser water air
+SODA1R440__VAV ,  vav zone discharge air pressure sensor
+SODA3R785__ANS ,  vav zone sp
+SODA1C500B_AGN ,  vav zone
+SODA3R719__ASO ,  vav zone temp sp
+SODA3R617_RVAV ,  vav zone discharge air pressure sensor
+SODA1C400B_AGN ,  vav zone
+SOD__BLD_EVENT , sensor
+SODA4R645__AGN ,  vav zone
+SODA4R733__AGN ,  vav zone
+SODA4R531_RVAV ,  vav zone discharge air pressure sensor
+SODC3P09___AMP , chilled condenser water pump current
+SODA1R678__AGN ,  vav zone
+SODA4R576__ASO ,  vav zone temp sp
+SODA3R683__ARS ,  vav zone temp sp
+SODA1C300B_ART ,  vav zone temp
+SODA1R598__AGN ,  vav zone
+SODA1R271__AGN ,  vav zone
+SODA1_LOW_RAT3 ,  return air temp
+SODA1_LOW_RAT2 ,  return air temp
+SODA1_LOW_RAT4 ,  return air temp
+SODA3R465_4VP2 ,  vav zone discharge air pressure sensor
+SODA3S16___DMP ,  fan mixed air damper
+SODA4R545__AGN ,  vav zone
+SODA1R352__ART ,  vav zone temp
+SODA1R326__VAV ,  vav zone discharge air pressure sensor
+SODA4R773_RVAV ,  vav zone discharge air pressure sensor
+SODA3R465_7ARS ,  vav zone temp sp
+SODA1R626__ASO ,  vav zone temp sp
+SODA3R465_7ART ,  vav zone temp
+SODC3L34___STA , chilled condenser water sensor
+SODA4S18___FLT ,  fan sensor
+SODA1R310__ARS ,  vav zone temp sp
+SODA1R310__ART ,  vav zone temp
+SODA1S11__FSTP ,  fan pressure sensor
+SODA4R465_3AGN ,  vav zone
+SODA3R389_RVAV ,  vav zone discharge air pressure sensor
+SODA3R395__AGN ,  vav zone
+SODA1R500B_VAV ,  vav zone discharge air pressure sensor
+SODH1P02__FAIL , hot water pump
+SODA1R288__ART ,  vav zone temp
+SODA1R288__ARS ,  vav zone temp sp
+SODA3R323_RVAV ,  vav zone discharge air pressure sensor
+SODA4R343__ART ,  vav zone temp
+SODA4R343__ARS ,  vav zone temp sp
+SODA4R349__ASO ,  vav zone temp sp
+SODA4R465A_VAV ,  vav zone discharge air pressure sensor
+SODA1R524__AGN ,  vav zone
+SODA3S16___S_S ,  fan sensor
+SODA3R525_RVAV ,  vav zone discharge air pressure sensor
+SODA4R651__ART ,  vav zone temp
+SODA3S16___CFM ,  fan air
+SODA3R615__ASO ,  vav zone temp sp
+SODA1R420A_ART ,  vav zone temp
+SODA3R729__ASO ,  vav zone temp sp
+SODA4R773__AGN ,  vav zone
+SODA1R330A_VAV ,  vav zone discharge air pressure sensor
+SODA1R420A_AGN ,  vav zone
+SODA3R317__AGN ,  vav zone
+SODA3R315__ARS ,  vav zone temp sp
+SODA3R315__ART ,  vav zone temp
+SODA1ALL_34NSB , 
+SODA4R671__AGN ,  vav zone
+SODA3R515__AGN ,  vav zone
+SODA4R643_RVAV ,  vav zone discharge air pressure sensor
+SODA3C611__ARS ,  vav zone temp sp
+SODA3C611__ART ,  vav zone temp
+SODA1S11___FLT ,  fan sensor
+SODA3ALL_32NSB , 
+SODA1R273__ARS ,  vav zone temp sp
+SODA1R273__ART ,  vav zone temp
+SODA4R765__ASO ,  vav zone temp sp
+SODA4R673_RVAV ,  vav zone discharge air pressure sensor
+SODA1S11_EFSTP ,  fan pressure sensor
+SODC1_ETC__SWT , chilled condenser water temp
+SODA1E12___SPR ,  exhaust fan speed
+SODA4R637_RVAV ,  vav zone discharge air pressure sensor
+SODA1C700BRVAV ,  vav zone discharge air pressure sensor
+SODA1F3_VAV_MX ,  discharge air pressure sensor
+SODA1F1_VAV_MX ,  discharge air pressure sensor
+SODA3R698__ART ,  vav zone temp
+SODA3R527__AGN ,  vav zone
+SODA3R698__ARS ,  vav zone temp sp
+SODA1R542__VAV ,  vav zone discharge air pressure sensor
+SODA1F1_VAV_MN ,  discharge air pressure sensor
+SODA1F3_VAV_MN ,  discharge air pressure sensor
+SODC2T2__H_S_S , chilled condenser water coolingTower sensor
+SODA3R623_RVAV ,  vav zone discharge air pressure sensor
+SODA3ALL_34ARS ,  zone temp sp
+SODA4R633__ART ,  vav zone temp
+SODA1R566__VAV ,  vav zone discharge air pressure sensor
+SODA4R441__ASO ,  vav zone temp sp
+SODA3R617__ARS ,  vav zone temp sp
+SODA3R513__ASO ,  vav zone temp sp
+SODA3R617__ART ,  vav zone temp
+SODA1R676__AGN ,  vav zone
+SODA1F4_VAV_MX ,  discharge air pressure sensor
+SODA1F4_VAV_MN ,  discharge air pressure sensor
+SODA3R579__AGN ,  vav zone
+SODA4R573__ASO ,  vav zone temp sp
+SODA1R287__VAV ,  vav zone discharge air pressure sensor
+SODA1R187A_ART ,  vav zone temp
+SODA3C511_RVAV ,  vav zone discharge air pressure sensor
+SODA1R465D_AGN ,  vav zone
+SODA4R447__AGN ,  vav zone
+SODA1R410A_ASO ,  vav zone temp sp
+SOD__BLD___SFM , sensor
+SODA4_LOW_RAT1 ,  return air temp
+SODA1R405B_ASO ,  vav zone temp sp
+SODC1C3_4__RWT , chilled condenser water chiller
+SODA3R798__ASO ,  vav zone temp sp
+SODA4E19___CFM ,  exhaust fan air
+SODA1S11_W_STS ,  fan pressure sp
+SODA1S11_W_STP ,  fan pressure sensor
+SODA1R678__ARS ,  vav zone temp sp
+SODA4R635__ART ,  vav zone temp
+SODA3R393__AGN ,  vav zone
+SODA4R635__ARS ,  vav zone temp sp
+SODA4R535_RVAV ,  vav zone discharge air pressure sensor
+SODA4R375_RVAV ,  vav zone discharge air pressure sensor
+SODA4C300T_ASO ,  vav zone temp sp
+SODA1R626__ARS ,  vav zone temp sp
+SODA3R465_7ASO ,  vav zone temp sp
+SODA1R626__ART ,  vav zone temp
+SODC2__I___VLV , chilled condenser water valve
+SODA4R681B_AGN ,  vav zone
+SODA3R329__ASO ,  vav zone temp sp
+SODA_CH1_CHWST , chiller chilled water temp
+SODA3R465_4ASO ,  vav zone temp sp
+SODA4R367__ART ,  vav zone temp
+SOD32BLD_1_VAR , sensor
+SODA1R330B_VAV ,  vav zone discharge air pressure sensor
+SODA1_SMK_ALM2 , 
+SODA1R271__VAV ,  vav zone discharge air pressure sensor
+SODA4R771__ARS ,  vav zone temp sp
+SODA1R284__AGN ,  vav zone
+SODA1R598__VAV ,  vav zone discharge air pressure sensor
+SODA1R416__ART ,  vav zone temp
+SODA1R416__ARS ,  vav zone temp sp
+SODC1SP04__TMR , chilled condenser water pump
+SOD32BLD_2_VAR , sensor
+SODA3R465_5ASO ,  vav zone temp sp
+SODA3R729__ARS ,  vav zone temp sp
+SODA4R573_RVAV ,  vav zone discharge air pressure sensor
+SODA1F2_VAV_AV ,  discharge air pressure sensor
+SODC3P09___SPD , chilled condenser water pump fan speed
+SODA1R582__ART ,  vav zone temp
+SODA3R729__ART ,  vav zone temp
+SODA1C600B_ARS ,  vav zone temp sp
+SODA1C600B_ART ,  vav zone temp
+SODC3P09___SPR , chilled condenser water pump fan speed
+SODC3P10___S_S , chilled condenser water pump sensor
+SODA4R535__ASO ,  vav zone temp sp
+SODA3R331__AGN ,  vav zone
+SODA4R635_RVAV ,  vav zone discharge air pressure sensor
+SODA1S11___SPD ,  fan speed
+SODA3R315__ASO ,  vav zone temp sp
+SODA1R277__ASO ,  vav zone temp sp
+SODA1S11___SPR ,  fan speed
+SODA3R789_RVAV ,  vav zone discharge air pressure sensor
+SODA1C300__VAV ,  vav zone discharge air pressure sensor
+SODA4R537_RVAV ,  vav zone discharge air pressure sensor
+SODA1C400C_VAV ,  vav zone discharge air pressure sensor
+SODA1C300B_ASO ,  vav zone temp sp
+SODA1C700D_ARS ,  vav zone temp sp
+SODA1R380__VAV ,  vav zone discharge air pressure sensor
+SODA4R347__AGN ,  vav zone
+SODA1R564__VAV ,  vav zone discharge air pressure sensor
+SODA4R671__ART ,  vav zone temp
+SODA3R781_RVAV ,  vav zone discharge air pressure sensor
+SODA3C711__ASO ,  vav zone temp sp
+SODA4R671__ARS ,  vav zone temp sp
+SODA3R687__AGN ,  vav zone
+SODA3R698__ASO ,  vav zone temp sp
+SODA4R465H_AGN ,  vav zone
+SODA1_SMK_ALM3 , 
+SODA4R441__ART ,  vav zone temp
+SODA3R723_RVAV ,  vav zone discharge air pressure sensor
+SODA4R441__ARS ,  vav zone temp sp
+SODA1_SMK_ALM4 , 
+SODA1R187A_ARS ,  vav zone temp sp
+SODC1SP03__SPD , chilled condenser water pump fan speed
+SODA1R310__VAV ,  vav zone discharge air pressure sensor
+SODC1C3____ALM , chilled condenser water chiller
+SODA3R683__AGN ,  vav zone
+SOD34NET___STA , sensor
+SODA1ALL_33NSB , 
+SODA3R587_RVAV ,  vav zone discharge air pressure sensor
+SODA1R544__AGN ,  vav zone
+SODC3X_____A_M , chilled condenser water
+SODA4R343__ASO ,  vav zone temp sp
+SODA1C400A_AGN ,  vav zone
